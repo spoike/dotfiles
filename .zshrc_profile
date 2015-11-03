@@ -1,0 +1,20 @@
+# ZSH Environment Configuration
+
+export PATH="$PATH:/home/CORPUSERS/23060940/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+
+# NVM with completion
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+#export PATH="$PATH:/home/CORPUSERS/23060940/.nvm/v0.10.26/bin"
+source "$HOME/.nvm/v0.10.26/lib/node_modules/npm/lib/utils/completion.sh"
+
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# Making sure tmux title doesn't get renamed all the time you change a directory
+DISABLE_AUTO_TITLE=true

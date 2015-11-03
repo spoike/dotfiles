@@ -1,0 +1,70 @@
+# ZSH Alias Configuration
+
+# NodeJS
+alias nnn='. ~/bin/use-nvm-per-packagejson.sh'
+alias n26='nvm use 0.10.26'
+alias n4='nvm use 4'
+alias nls='~/bin/npm-helper.sh'
+
+# Quick Edit
+alias devlog='vim ~/Projects/devlog/todo.txt'
+alias devdone='vim ~/Projects/devlog/done.txt'
+alias zshconfig="vim ~/.zshrc"
+
+# Docker
+alias dicker='docker'
+alias dc='docker-compose'
+
+# Github Clone
+function h() {
+	g clone https://github.com/$1.git
+}
+
+# AWS
+function s3ls() {
+    aws s3 ls s3://$1
+}
+
+# Find file
+function ff() {
+    find $(pwd) -name "*$1*" | \
+        grep -v -E /\(node_modules\|bower_components\|.git\)
+}
+
+# Find in file
+function f()
+{
+    grep --color=always \
+        -Rnw -i "$1" \
+        --include=**\*.{js,json,sh,yml} \
+        --exclude-dir={node_modules,bower_components} \
+        $(pwd) | \
+        sed -e "s/\t//g" | \
+        sed "s/:/:\t /2" | \
+        column -ts $'\t'
+}
+function fl()
+{
+    f $1 | \
+        less -S
+}
+
+# Mongo
+alias mup='sudo service mongod start'
+alias mdown='sudo service mongod stop'
+
+# Reading logfiles
+alias lf='goaccess -p ~/.goaccessrc -f'
+alias lapp='lf log/app-*.log'
+
+# Misc Pipeable
+alias copy='xsel -ib'
+
+# Misc Shortcuts
+alias o='google-chrome --new-window'
+alias fuck='sudo $(fc -ln -1)'
+alias week='/bin/date +%V'
+alias nyan='~/Projects/stuff/nyancat/src/nyancat'
+alias fisk='~/Projects/stuff/nyandopefish/src/nyancat'
+alias lsd='nyan'
+alias pp='python /opt/spotify-notify/spotify-notify.py -a playPause'

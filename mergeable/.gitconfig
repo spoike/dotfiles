@@ -1,0 +1,42 @@
+[core]
+	editor = vim
+[user]
+	email = mikael.brassman@tretton37.com
+	name = Mikael Brassman
+[alias]
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	lsd = "!~/Projects/stuff/nyancat/src/nyancat"
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+	dlc = diff --cached HEAD^
+	cp = cherry-pick
+	st = status -s
+	cl = clone
+	ci = commit
+	co = checkout
+	br = branch
+	diff = diff --word-diff
+	dc = diff --cached
+	la = "!git config -l | grep alias | cut -c 7-"
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	rh2 = reset HEAD^^ --hard
+	sl = stash list
+	sa = stash apply
+	ss = stash save
+	gr = grep -Ii
+	pl = "!git stash; git pull; git stash pop"
+[merge]
+	tool = kdiff3
+[push]
+	default = simple
+[color]
+	diff = true
