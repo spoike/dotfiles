@@ -2,9 +2,8 @@
 
 if [[ -f /etc/debian_version ]]; then
   packages=()
-  if ! [ -x "$(command -v git)" ]; then
-    packages+=(git)
-  fi
+  [ ! -x "$(command -v git)" ] && packages+=(git)
+  [ ! -x "$(command -v tig)" ] && packages+=(tig)
   if [ $packages ]; then
     sudo apt-get install $packages
   fi
