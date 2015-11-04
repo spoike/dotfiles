@@ -8,6 +8,10 @@ msg() {
   echo "\e[0;36m$1\e[0m\t"
 }
 
+warn() {
+  echo "\e[0;33mWARN!\e[0m\t$1"
+}
+
 pipeEditor() {
   TMPFILE=`mktemp /tmp/bootstrap.sh.tmp.XXXXXXXXXX`
   cat > {$TMPFILE}
