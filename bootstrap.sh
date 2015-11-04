@@ -33,6 +33,29 @@ for file in $files; do
   ok $file
 done
 
+linkBinFiles() {
+  cd bin
+  files=`ls *~*swp`
+  src=$dir/bin
+  dest=$HOME/bin && mkdir -p $dest
+  backupDest=$backupDir/bin && mkdir -p $backupDest
+  for file in $files; do
+    if [ -L $dest/$file ]; then
+      ok bin/$file
+      continue
+    fi
+    if [ -f $dest/$file ]; then
+      echo "Backing up and symlinking $file"
+      mv -v $dest/$file $backupDest && ln -vs $src/$file $dest/$file
+    else
+      echo "Symlinking $file"
+      ln -vs $dest/$file $src/$file
+    fi
+    ok bin/$file
+  done
+}
+( linkBinFiles )
+
 # Merge config files
 mergeFiles() {
   cd mergeable
