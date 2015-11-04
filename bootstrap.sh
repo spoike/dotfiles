@@ -48,9 +48,9 @@ mergeFiles() {
       merged=$(diff3 -m $HOME/$file $dir/mergeable/$file $dir/mergeable/$file)
       if [ ! $? -eq 0 ]; then
         # merge conflict, edit, and save it in place
-        echo $merged | EDITOR=vim pipeEditor | cat > $HOME/$file
+        printf %s "$merged" | EDITOR=vim pipeEditor > $HOME/$file
       else
-        echo $merged > $HOME/$file
+        printf %s "$merged" > $HOME/$file
       fi
     else
       msg "Adding $file"
