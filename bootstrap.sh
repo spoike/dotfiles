@@ -64,9 +64,9 @@ mergeFiles() {
 # Install platform dependent packages and settings
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
-  ./scripts/bootstrap_linux.sh
+  ./scripts/linux.sh
 elif [[ $platform == 'Darwin' ]]; then
-  ./scripts/bootstrap_osx.sh
+  ./scripts/osx.sh
 fi
 
 # Install antigen for zsh
