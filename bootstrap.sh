@@ -17,6 +17,7 @@ files=(`ls .*~*swp~.git*`)    # Lists all dotfiles
 # Ensure the backup directory is in place for old dotfiles
 mkdir -pv ${backupDir}
 
+msg "Setting up dotfiles"
 # Backing up and symlinking
 for file in $files; do
   if [ -L $HOME/$file ]; then
@@ -33,6 +34,7 @@ for file in $files; do
   ok $file
 done
 
+msg "Setting up ~/bin scripts"
 linkBinFiles() {
   cd bin
   files=`ls *~*swp`
@@ -56,6 +58,7 @@ linkBinFiles() {
 }
 ( linkBinFiles )
 
+msg "Setting up config files (merging)"
 # Merge config files
 mergeFiles() {
   cd mergeable
