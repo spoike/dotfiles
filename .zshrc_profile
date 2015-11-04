@@ -5,7 +5,7 @@ export PATH="$PATH:/home/CORPUSERS/23060940/bin:/usr/lib/lightdm/lightdm:/usr/lo
 # NVM with completion
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 #export PATH="$PATH:/home/CORPUSERS/23060940/.nvm/v0.10.26/bin"
-source "$HOME/.nvm/v0.10.26/lib/node_modules/npm/lib/utils/completion.sh"
+#source "$HOME/.nvm/v0.10.26/lib/node_modules/npm/lib/utils/completion.sh"
 
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
