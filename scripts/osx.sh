@@ -18,3 +18,14 @@ if [ ! -x "$(command -v brew)" ]; then
 else
   ok "Homebrew (brew)"
 fi
+
+packages=()
+[ ! -x "$(command -v git)" ] && packages+=(git)
+[ ! -x "$(command -v tig)" ] && packages+=(tig)
+[ ! -x "$(command -v jq)" ] && packages+=(jq)
+[ ! -x "$(command -v wget)" ] && packages+=(wget)
+[ ! -x "$(command -v tmux)" ] && packages+=(tmux)
+if [ $packages ]; then
+  brew update
+  brew install $packages
+fi
