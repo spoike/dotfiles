@@ -12,9 +12,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.rvm/scripts/rvm
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 # Making sure tmux title doesn't get renamed all the time you change a directory
 DISABLE_AUTO_TITLE=true
