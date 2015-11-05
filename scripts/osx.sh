@@ -20,6 +20,7 @@ else
 fi
 
 packages=()
+[ ! -d "/usr/local/opt/coreutils/libexec" ] && packages+=(coreutils)
 [ ! -x "$(command -v git)" ] && packages+=(git)
 [ ! -x "$(command -v tig)" ] && packages+=(tig)
 [ ! -x "$(command -v jq)" ] && packages+=(jq)

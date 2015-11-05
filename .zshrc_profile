@@ -25,5 +25,10 @@ fi
 # set PATH so it includes user's private bin if it exists
 [[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
 
+if [[ -d "/usr/local/opt/coreutils/libexec" ]]; then
+   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 # Making sure tmux title doesn't get renamed all the time you change a directory
 DISABLE_AUTO_TITLE=true
