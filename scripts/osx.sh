@@ -27,6 +27,7 @@ packages=()
 [ ! -x "$(command -v wget)" ] && packages+=(wget)
 [ ! -x "$(command -v tmux)" ] && packages+=(tmux)
 if [ $packages ]; then
+  warn "Missing packages: ${packages}. Attempting to install with brew."
   brew update
   brew install $packages
 fi
