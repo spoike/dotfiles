@@ -62,12 +62,14 @@ alias lapp='lf log/app-*.log'
 # Misc Pipeable
 alias copy='xsel -ib'
 
-# Misc Shortcuts
+# Fun Stuff
 alias fuck='sudo $(fc -ln -1)' # also achievable with `sudo !!`
-alias week='/bin/date +%V'
 alias nyan='~/Projects/stuff/nyancat/src/nyancat'
 alias lsd='nyan'
 alias fisk='~/Projects/stuff/nyandopefish/src/nyancat'
+
+# Misc Shortcuts
+alias week='/bin/date +%V'
 alias pp='python /opt/spotify-notify/spotify-notify.py -a playPause'
 if [[ $platform == 'Linux' ]]; then
 	alias o='google-chrome --new-window' # Mac OSX I do this with `open` instead
