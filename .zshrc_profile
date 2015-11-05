@@ -1,18 +1,29 @@
 # ZSH Environment Configuration
 
-export PATH="$PATH:/home/CORPUSERS/23060940/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-
 # NVM with completion
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
-#export PATH="$PATH:/home/CORPUSERS/23060940/.nvm/v0.10.26/bin"
-#source "$HOME/.nvm/v0.10.26/lib/node_modules/npm/lib/utils/completion.sh"
+#export PATH="$PATH:$NVM_DIR/v0.10.26/bin"
+#source "$NVM_DIR/v0.10.26/lib/node_modules/npm/lib/utils/completion.sh"
 
 # rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
+if [[ -d "$HOME/.rvm" ]]; then
+  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+  source $HOME/.rvm/scripts/rvm
+fi
 
+# stuff
+[[ -d "/usr/lib/lightdm" ]] && export PATH="$PATH:/usr/lib/lightdm/lightdm"
+[[ -d "/usr/games" ]] && export PATH="$PATH:/usr/games"
+# sbin
+[[ -d "/usr/local/sbin" ]] && export PATH="$PATH:/usr/local/sbin"
+[[ -d "/usr/sbin" ]] && export PATH="$PATH:/usr/sbin"
+[[ -d "/sbin" ]] && export PATH="$PATH:/sbin"
+# bin
+[[ -d "/usr/local/bin" ]] && export PATH="$PATH:/usr/local/bin"
+[[ -d "/usr/bin" ]] && export PATH="$PATH:/usr/bin"
+[[ -d "/bin" ]] && export PATH="$PATH:/bin"
 # set PATH so it includes user's private bin if it exists
-[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
 
 # Making sure tmux title doesn't get renamed all the time you change a directory
 DISABLE_AUTO_TITLE=true
