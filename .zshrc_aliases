@@ -1,9 +1,11 @@
 # ZSH Alias Configuration
 
+platform=`uname` # for selecting aliases for a specific platform
+
 # NodeJS
 alias nnn='. ~/bin/use-pkg-node-version.sh'
 alias n26='nvm use 0.10.26'
-alias n4='nvm use 4'
+alias n4='nvm use 4.2'
 alias nls='npm run'
 
 # Quick Edit
@@ -61,10 +63,15 @@ alias lapp='lf log/app-*.log'
 alias copy='xsel -ib'
 
 # Misc Shortcuts
-alias o='google-chrome --new-window'
-alias fuck='sudo $(fc -ln -1)'
+alias fuck='sudo $(fc -ln -1)' # also achievable with `sudo !!`
 alias week='/bin/date +%V'
 alias nyan='~/Projects/stuff/nyancat/src/nyancat'
-alias fisk='~/Projects/stuff/nyandopefish/src/nyancat'
 alias lsd='nyan'
+alias fisk='~/Projects/stuff/nyandopefish/src/nyancat'
 alias pp='python /opt/spotify-notify/spotify-notify.py -a playPause'
+if [[ $platform == 'Linux' ]]; then
+	alias o='google-chrome --new-window' # Mac OSX I do this with `open` instead
+elif [[ $platform == 'Darwin' ]]; then
+	alias ls='ls -GFph --color=auto'
+	alias grep='grep --color=auto'
+fi
