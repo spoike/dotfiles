@@ -72,6 +72,7 @@ alias pp='python /opt/spotify-notify/spotify-notify.py -a playPause'
 if [[ $platform == 'Linux' ]]; then
 	alias o='google-chrome --new-window' # Mac OSX I do this with `open` instead
 elif [[ $platform == 'Darwin' ]]; then
-	alias ls='ls -GFph --color=auto'
+	alias ls='ls -GFph'
 	alias grep='grep --color=auto'
+	export CLICOLOR=1
 fi
