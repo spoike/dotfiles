@@ -29,6 +29,7 @@ else
   [ ! -x "$(command -v jq)" ] && packages+=(jq)
   [ ! -x "$(command -v wget)" ] && packages+=(wget)
   [ ! -x "$(command -v tmux)" ] && packages+=(tmux)
+  [ ! -x "$(command -v reattach-to-user-namespace)" ] && packages+=(reattach-to-user-namespace)
   if [ $packages ]; then
     warn "Missing packages: ${packages}. Attempting to install with brew."
     brew update
