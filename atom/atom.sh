@@ -1,10 +1,11 @@
 #!/usr/bin/env zsh
 
+selfpath=$(dirname -- $0:A)
 source $HOME/dotfiles/scripts/funcs.sh
 
 installed=`apm ls -ib`
 packages=()
-list=(`cat atom.packages`)
+list=(`cat ${selfpath}/atom.packages`)
 for package in $list; do
   if [[ ! -n "${installed[(r)${package}]}" ]]; then
     warn "$package"
