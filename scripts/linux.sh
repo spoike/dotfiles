@@ -12,7 +12,7 @@ if [[ -f /etc/debian_version ]]; then
   [ ! -x "$(command -v jq)" ] && packages+=(jq)
   [ ! -x "$(command -v wget)" ] && packages+=(wget)
   [ ! -x "$(command -v tmux)" ] && packages+=(tmux)
-  if [ $packages ]; then
-    sudo apt-get install $packages
+  if [ ! -z "$packages" ]; then
+   sudo apt-get install $packages
   fi
 fi
