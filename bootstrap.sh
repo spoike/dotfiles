@@ -51,7 +51,7 @@ linkBinFiles() {
       mv -v $dest/$file $backupDest && ln -vs $src/$file $dest/$file
     else
       echo "Symlinking $file"
-      ln -vs $dest/$file $src/$file
+      ln -vs $src/$file $dest/$file
     fi
     ok bin/$file
   done
