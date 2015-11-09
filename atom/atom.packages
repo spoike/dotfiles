@@ -2,6 +2,7 @@ atom-jade
 atom-monokai
 color-picker
 editorconfig
+emmet
 highlight-selected
 linter
 linter-eslint
