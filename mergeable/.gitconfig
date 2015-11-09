@@ -1,8 +1,5 @@
 [core]
 	editor = vim
-[user]
-	email = mikael.brassman@tretton37.com
-	name = Mikael Brassman
 [alias]
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	lsd = "!lsd"
