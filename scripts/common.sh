@@ -31,3 +31,23 @@ if [[ ! -s $HOME/.nvm/nvm.sh ]]; then
 else
   ok nvm
 fi
+
+stuff=$HOME/Projects/stuff
+current=`pwd`
+mkdir -p $stuff
+
+if [[ ! -d $stuff/nyancat ]]; then
+  msg "Missing nyancat will attempt to clone and build..."
+  git clone https://github.com/klange/nyancat.git $stuff/nyancat
+  cd $stuff/nyancat/src/
+  make
+  cd $current
+fi
+
+if [[ ! -d $stuff/nyan-dopefish ]]; then
+  msg "Missing dopefish will attempt to clone and build..."
+  git clone https://github.com/spoike/nyan-dopefish.git $stuff/nyan-dopefish
+  cd $stuff/nyan-dopefish/src/
+  make
+  cd $current
+fi

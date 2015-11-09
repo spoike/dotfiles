@@ -66,7 +66,7 @@ alias copy='xsel -ib'
 alias fuck='sudo $(fc -ln -1)' # also achievable with `sudo !!`
 alias nyan='~/Projects/stuff/nyancat/src/nyancat'
 alias lsd='nyan'
-alias fisk='~/Projects/stuff/nyandopefish/src/nyancat'
+alias fisk='~/Projects/stuff/nyan-dopefish/src/nyancat'
 
 # Misc Shortcuts
 alias week='/bin/date +%V'
