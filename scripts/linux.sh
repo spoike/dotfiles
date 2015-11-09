@@ -13,6 +13,9 @@ if [[ -f /etc/debian_version ]]; then
   [ ! -x "$(command -v wget)" ] && packages+=(wget)
   [ ! -x "$(command -v tmux)" ] && packages+=(tmux)
   if [ ! -z "$packages" ]; then
-   sudo apt-get install $packages
+    warn "Missing packages: ${packages}. Will now attempt to install with apt-get."
+    sudo apt-get install $packages
+  else
+    ok "apt-get packages"
   fi
 fi

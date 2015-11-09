@@ -31,7 +31,7 @@ else
   [ ! -x "$(command -v tmux)" ] && packages+=(tmux)
   [ ! -x "$(command -v reattach-to-user-namespace)" ] && packages+=(reattach-to-user-namespace)
   if [ $packages ]; then
-    warn "Missing packages: ${packages}. Attempting to install with brew."
+    warn "Missing packages: ${packages}. Will now attempt to install with brew."
     brew update
     brew install $packages
   fi
