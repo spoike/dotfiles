@@ -1,6 +1,3 @@
-[ -e "${HOME}/.zshrc_aliases" ] && source "${HOME}/.zshrc_aliases"
-[ -e "${HOME}/.zshrc_profile" ] && source "${HOME}/.zshrc_profile"
-
 source "$HOME/.antigen/antigen.zsh"
 
 # Load the oh-my-zsh's library.
@@ -35,4 +32,10 @@ EOBUNDLES
 antigen theme agnoster
 antigen apply
 
+# Projects w. autocomplete
+pd(){cd $HOME/Projects/$1;}
+compctl -W $HOME/Projects -/ pd
+
+[ -e "${HOME}/.zshrc_aliases" ] && source "${HOME}/.zshrc_aliases"
+[ -e "${HOME}/.zshrc_profile" ] && source "${HOME}/.zshrc_profile"
 [ -e "${HOME}/.zshrc_extras" ] && source "${HOME}/.zshrc_extras"
