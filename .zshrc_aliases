@@ -22,6 +22,10 @@ function h() {
 	g clone https://github.com/$1.git
 }
 
+# Projects w. autocomplete
+pd(){cd $HOME/Projects/$1;}
+compctl -W $HOME/Projects -/ pd
+
 # AWS
 function s3ls() {
     aws s3 ls s3://$1
