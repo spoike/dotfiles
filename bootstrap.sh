@@ -34,6 +34,14 @@ for file in $files; do
   ok $file
 done
 
+# Ensure .zshrc_extras file is created
+if [ ! -f $HOME/.zshrc_extras ]; then
+  warn ".zshrc_extras is missing... Creating empty file"
+  touch $HOME/.zshrc_extras
+else
+  ok ".zshrc_extras"
+fi
+
 msg "Setting up ~/bin scripts"
 linkBinFiles() {
   cd bin

@@ -34,3 +34,5 @@ EOBUNDLES
 
 antigen theme agnoster
 antigen apply
+
+[ -e "${HOME}/.zshrc_extras" ] && source "${HOME}/.zshrc_extras"
