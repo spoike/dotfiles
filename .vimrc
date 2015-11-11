@@ -59,3 +59,7 @@ let g:ctrlp_custom_ignore = {
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Markdown folding
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
