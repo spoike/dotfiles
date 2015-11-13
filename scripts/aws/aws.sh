@@ -18,9 +18,16 @@ fi
 ok "pip"
 
 if [ ! -x "$(command -v aws)" ]; then
-  info "Installing aws-cli"
+  msg "Installing aws-cli"
   sudo pip install awscli
 else
   sudo pip install --upgrade awscli
 fi
 ok "aws-cli"
+
+if [ ! -d $HOME/.aws ]; then
+  msg "aws configuration is missing, running aws configure"
+  aws configure
+else
+  ok "aws configuration"
+fi
