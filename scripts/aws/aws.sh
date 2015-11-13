@@ -27,6 +27,7 @@ ok "aws-cli"
 
 if [ ! -d $HOME/.aws ]; then
   msg "aws configuration is missing, running aws configure"
+  msg "you can generate access keys from IAM: https://console.aws.amazon.com/iam/"
   aws configure
 else
   ok "aws configuration"
