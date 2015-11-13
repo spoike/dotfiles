@@ -61,7 +61,11 @@ alias lf='goaccess -p ~/.goaccessrc -f'
 alias lapp='lf log/app-*.log'
 
 # Misc Pipeable
-alias copy='xsel -ib'
+if [[ $platform == 'Linux' ]]; then
+	alias copy='xsel -ib'
+elif [[ $platform == 'Darwin' ]]; then
+	alias copy='pbcopy'
+fi
 
 # Fun Stuff
 alias fuck='sudo $(fc -ln -1)' # also achievable with `sudo !!`
