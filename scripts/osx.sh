@@ -23,13 +23,13 @@ else
   fi
 
   packages=()
-  [ ! -d "/usr/local/opt/coreutils/libexec" ] && packages+=(coreutils)
-  [ ! -x "$(command -v git)" ] && packages+=(git)
-  [ ! -x "$(command -v tig)" ] && packages+=(tig)
-  [ ! -x "$(command -v jq)" ] && packages+=(jq)
-  [ ! -x "$(command -v wget)" ] && packages+=(wget)
-  [ ! -x "$(command -v tmux)" ] && packages+=(tmux)
-  [ ! -x "$(command -v reattach-to-user-namespace)" ] && packages+=(reattach-to-user-namespace)
+  [ ! -d "/usr/local/opt/coreutils/libexec" ] && packages+=(coreutils) || ok coreutils
+  [ ! -x "$(command -v git)" ] && packages+=(git) || ok git
+  [ ! -x "$(command -v tig)" ] && packages+=(tig) || ok tig
+  [ ! -x "$(command -v jq)" ] && packages+=(jq) || ok jq
+  [ ! -x "$(command -v wget)" ] && packages+=(wget) || ok wget
+  [ ! -x "$(command -v tmux)" ] && packages+=(tmux) || ok tmux
+  [ ! -x "$(command -v reattach-to-user-namespace)" ] && packages+=(reattach-to-user-namespace) || ok reattach-to-user-namespace
   if [ $packages ]; then
     warn "Missing packages: ${packages}. Will now attempt to install with brew."
     brew update
