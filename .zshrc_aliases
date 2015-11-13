@@ -7,6 +7,7 @@ alias nnn='. ~/bin/use-pkg-node-version.sh'
 alias n26='nvm use 0.10.26'
 alias n4='nvm use 4.2'
 alias nls='npm run'
+alias nw='npm run watch'
 
 # Quick Edit
 alias devlog='vim ~/Projects/devlog/todo.txt'
