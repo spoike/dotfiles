@@ -11,6 +11,7 @@
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 	dlc = diff --cached HEAD^
+	dr  = "!f() { git diff "$1"^.."$1"; }; f"
 	cp = cherry-pick
 	st = status -s
 	cl = clone
@@ -31,6 +32,7 @@
 	ss = stash save
 	gr = grep -Ii
 	pl = "!git stash; git pull; git stash pop"
+	f = "!git ls-files | grep -i"
 [merge]
 	tool = kdiff3
 [push]
