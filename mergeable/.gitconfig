@@ -27,6 +27,7 @@
 	rh = reset --hard
 	rh1 = reset HEAD^ --hard
 	rh2 = reset HEAD^^ --hard
+	undo = reset --soft HEAD^
 	sl = stash list
 	sa = stash apply
 	ss = stash save
