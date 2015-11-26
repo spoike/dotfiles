@@ -2,7 +2,7 @@
 #
 # Switches to node version with nvm to the one defined in package.json
 # Dependencies: nvm, jq
-# Usage: Alias this by sourcing with ".", e.g. alias nnn='~/bin/use-pkg-node-version.sh'
+# Usage: Alias this by sourcing with ".", e.g. alias nnn='. ~/bin/use-pkg-node-version.sh'
 
 if [ ! -e package.json ]; then
     echo "Missing package.json file"
