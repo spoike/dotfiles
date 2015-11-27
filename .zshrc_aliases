@@ -82,4 +82,10 @@ elif [[ $platform == 'Darwin' ]]; then
 	alias ls='ls -GFph'
 	alias grep='grep --color=auto'
 	export CLICOLOR=1
+	alias o='open'
 fi
+
+# Open Web (using o alias)
+function ow() {
+	o http://localhost:$1
+}
