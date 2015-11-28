@@ -12,27 +12,12 @@ source ./scripts/funcs.sh
 dir=$(dirname -- "$0:A")
 cd $dir                            # Making sure we're in the script's directory
 backupDir="${dir}_old"             # Backup directory for old dotfiles
-files=(`ls .*~*swp~.git*`)    # Lists all dotfiles
 
 # Ensure the backup directory is in place for old dotfiles
 mkdir -pv ${backupDir}
 
 msg "Setting up dotfiles"
-# Backing up and symlinking
-for file in $files; do
-  if [ -L $HOME/$file ]; then
-    ok $file
-    continue
-  fi
-  if [ -f $HOME/$file ]; then
-    echo "Backing up and symlinking $file"
-    mv -v $HOME/$file $backupDir && ln -vs $dir/$file $HOME/$file
-  else
-    echo "Symlinking $file"
-    ln -vs $dir/$file $HOME/$file
-  fi
-  ok $file
-done
+./bootstrap_castle.sh
 
 # Ensure .zshrc_extras file is created
 if [ ! -f $HOME/.zshrc_extras ]; then
@@ -41,30 +26,6 @@ if [ ! -f $HOME/.zshrc_extras ]; then
 else
   ok ".zshrc_extras"
 fi
-
-msg "Setting up ~/bin scripts"
-linkBinFiles() {
-  cd bin
-  files=`ls *~*swp`
-  src=$dir/bin
-  dest=$HOME/bin && mkdir -p $dest
-  backupDest=$backupDir/bin && mkdir -p $backupDest
-  for file in $files; do
-    if [ -L $dest/$file ]; then
-      ok bin/$file
-      continue
-    fi
-    if [ -f $dest/$file ]; then
-      echo "Backing up and symlinking $file"
-      mv -v $dest/$file $backupDest && ln -vs $src/$file $dest/$file
-    else
-      echo "Symlinking $file"
-      ln -vs $src/$file $dest/$file
-    fi
-    ok bin/$file
-  done
-}
-( linkBinFiles )
 
 msg "Setting up config files (merging)"
 # Merge config files
