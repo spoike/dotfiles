@@ -55,3 +55,13 @@ if [[ ! -d $stuff/nyan-dopefish ]]; then
 else
   ok "dopefish"
 fi
+
+if [[ ! -d $stuff/powerline-fonts ]]; then
+  msg "Missing powerline fonts. Will attempt to clone and install..."
+  git clone https://github.com/powerline/fonts.git $stuff/powerline-fonts
+  cd $stuff/powerline-fonts
+  ./install.sh
+  cd $current
+else
+  ok "powerline fonts"
+fi
