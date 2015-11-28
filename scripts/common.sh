@@ -42,6 +42,8 @@ if [[ ! -d $stuff/nyancat ]]; then
   cd $stuff/nyancat/src/
   make
   cd $current
+else
+  ok "nyancat"
 fi
 
 if [[ ! -d $stuff/nyan-dopefish ]]; then
@@ -50,4 +52,6 @@ if [[ ! -d $stuff/nyan-dopefish ]]; then
   cd $stuff/nyan-dopefish/src/
   make
   cd $current
+else
+  ok "dopefish"
 fi
