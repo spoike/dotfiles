@@ -65,3 +65,10 @@ if [[ ! -d $stuff/powerline-fonts ]]; then
 else
   ok "powerline fonts"
 fi
+
+if [[ ! -d $stuff/tmuxifier ]]; then
+  msg "Missing tmuxifier. Will attempt to clone..."
+  git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+else
+  ok "tmuxifier"
+fi

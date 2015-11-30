@@ -38,3 +38,7 @@ platform=`uname`
 if [[ ! $platform == 'Linux' ]]; then
     [ ! -x "$(command -v byobu)" ] && export BYOBU_PREFIX=$(brew --prefix)
 fi
+
+# tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
