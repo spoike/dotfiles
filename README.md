@@ -10,16 +10,17 @@
 
 3. Look through the settings. Change what you want to change.
 
-4. Run the install script. `cd ~/dotfiles && ./install.sh`
+4. Run the install script. `cd ~/dotfiles && make`
 
-## What does `./install.sh` do?
+## What does the Makefile do?
 
 The installer/bootstrapper scripts will attempt to do the following things:
 
-* Symlink the dotfiles in the repo to your home directory
+* Symlink the dotfiles in the repo's castle directory to your home directory
 
 * Merges some config files, e.g. `.gitconfig`, to the ones you have. They are
-  specified in the `mergeable` folder
+  specified in the `mergeable` folder. The reason for the merge is to have
+  credentials out of the public repo.
 
-* Install common OSS packages and tools I use at work and home. On mac it will
-attempt to install XCode Command Line Tools and Homebrew.
+* Install common OSS packages and tools I use both at work and home. On mac it
+  will attempt to install XCode Command Line Tools and Homebrew.
