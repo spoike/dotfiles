@@ -66,9 +66,9 @@ else
   ok "powerline fonts"
 fi
 
-if [[ ! -d $stuff/tmuxifier ]]; then
+if [[ ! -d $HOME/.tmuxifier ]]; then
   msg "Missing tmuxifier. Will attempt to clone..."
-  git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+  git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 else
   ok "tmuxifier"
 fi
