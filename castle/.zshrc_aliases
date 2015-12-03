@@ -4,6 +4,7 @@ platform=`uname` # for selecting aliases for a specific platform
 
 # NodeJS
 alias nnn='. ~/bin/use-pkg-node-version.sh'
+alias nsn='. ~/bin/set-pkg-node-version.sh'
 alias n26='nvm use 0.10.26'
 alias n4='nvm use 4.2'
 alias nls='npm run'
