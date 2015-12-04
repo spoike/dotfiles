@@ -30,7 +30,8 @@
 	undo = reset --soft HEAD^
 	sl = stash list
 	sa = stash apply
-	ss = stash save
+	ss = stash save -u
+	sp = stash pop
 	gr = grep -Ii
 	pl = "!git stash; git pull; git stash pop"
 	f = "!git ls-files | grep -i"
