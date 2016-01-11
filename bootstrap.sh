@@ -64,4 +64,12 @@ elif [[ $platform == 'Darwin' ]]; then
   ./scripts/osx.sh
 fi
 
+# Install platform independent packages and settings
 ./scripts/common.sh
+
+if [[ -x "$(command -v npm)" ]]; then
+  ./scripts/npm.sh
+else
+  warn "Missing npm, cannot install global npm packages"
+fi
+
