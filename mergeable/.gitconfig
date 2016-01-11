@@ -35,6 +35,8 @@
 	gr = grep -Ii
 	pl = "!git stash; git pull; git stash pop"
 	f = "!git ls-files | grep -i"
+	out = fire
+	going = fire
 [merge]
 	tool = kdiff3
 [push]
