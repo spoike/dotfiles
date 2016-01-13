@@ -98,3 +98,9 @@ fi
 function ow() {
 	o http://localhost:$1
 }
+
+# Open Remote Repo (using o alias)
+function or() {
+	remotes=($(git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1))
+	o ${remotes[1]}
+}
