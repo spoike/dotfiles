@@ -19,3 +19,5 @@ foldingtext-for-atom
 clipboard-plus
 language-viml
 language-todotxt
+pretty-json
+activate-power-mode
