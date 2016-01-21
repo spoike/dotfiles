@@ -85,6 +85,7 @@ alias mux='tmuxifier'
 alias td='cd $(mktemp -d)'
 alias week='/bin/date +%V'
 alias pp='python /opt/spotify-notify/spotify-notify.py -a playPause'
+alias ipip='what-is-my-ip.sh'
 if [[ $platform == 'Linux' ]]; then
 	alias o='google-chrome --new-window' # Mac OSX I do this with `open` instead
 elif [[ $platform == 'Darwin' ]]; then
