@@ -105,3 +105,6 @@ function or() {
 	remotes=($(git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1))
 	o ${remotes[1]}
 }
+
+# Quick open useful web pages/apps
+alias odd='o http://devdocs.io'
