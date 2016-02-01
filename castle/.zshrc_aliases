@@ -70,6 +70,7 @@ alias lapp='lf log/app-*.log'
 # Misc Pipeable
 if [[ $platform == 'Linux' ]]; then
 	alias copy='xsel -ib'
+	alias pbpaste='xsel --clipboard --output'
 elif [[ $platform == 'Darwin' ]]; then
 	alias copy='pbcopy'
 fi
