@@ -63,3 +63,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Markdown folding
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
+
+" Wildmenu
+if has("wildmenu")
+  set wildignore+=*.a,*.o
+  set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+  set wildignore+=.DS_Store,.git,.hg,.svn
+  set wildignore+=*~,*.swp,*.tmp
+  set wildmenu
+  set wildmode=list:longest,full
+endif
