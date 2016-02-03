@@ -9,6 +9,10 @@ alias n26='nvm use 0.10.26'
 alias n4='nvm use 4.2'
 alias nls='npm run'
 alias nw='npm run watch'
+function nt() {
+  TASKS_ARR=$(npm run | grep -v "^    " | sed -e 's/^[[:space:]]*//' | grep watch | grep test)
+  npm run $(echo $TASKS_ARR | tail -n 1)
+}
 function on() {
   ports=("${(@f)$(netstat -anp 2> /dev/null | grep LISTEN.*node | awk '{ print $4 }' | cut -d':' -f4)}")
 	for port in $ports; do
