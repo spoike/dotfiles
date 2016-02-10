@@ -5,6 +5,10 @@ source ./scripts/funcs.sh
 
 msg "Setting up OSX"
 
+# Defaults
+# Use all F1, F2, ...etc keys as standard function keys (FnLock)
+defaults write NSGlobalDomain com.apple.keyboard.fnState -int 1
+
 # XCode Command-line Tools
 if [ ! -x "$(command -v xcode-select)" ]; then
   warn "Please install XCode Command-line Tools in order to install homebrew and its packages."
