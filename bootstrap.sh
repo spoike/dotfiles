@@ -7,6 +7,8 @@
 
 setopt extendedglob
 
+zparseopts -- a=promptall
+
 source ./scripts/funcs.sh
 
 dir=$(dirname -- "$0:A")
@@ -73,3 +75,19 @@ else
   warn "Missing npm, cannot install global npm packages"
 fi
 
+# Install with prompt
+if [[ ! -z $promptall ]]; then
+  read -q "REPLY?Install atom packages? [y/N] " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    ./scripts/atom/atom.sh
+  fi
+
+  read -q "REPLY?Install aws-cli? [y/N] " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    ./scripts/aws/aws.sh
+  fi
+fi
