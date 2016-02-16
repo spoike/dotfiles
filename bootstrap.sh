@@ -69,6 +69,9 @@ fi
 # Install platform independent packages and settings
 ./scripts/common.sh
 
+# Install github packages
+./scripts/github_releases.sh
+
 if [[ -x "$(command -v npm)" ]]; then
   ./scripts/npm.sh
 else

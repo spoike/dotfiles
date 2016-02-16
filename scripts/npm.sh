@@ -3,6 +3,8 @@
 
 source ./scripts/funcs.sh
 
+msg "Setting up global npm packages"
+
 packages=()
 [ ! -x "$(command -v git-fire)" ] && packages+=(git-fire) || ok git-fire
 if [ ! -z "$packages" ]; then
@@ -11,4 +13,3 @@ if [ ! -z "$packages" ]; then
 else
   ok "npm packages"
 fi
-
