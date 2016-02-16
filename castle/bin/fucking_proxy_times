@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+FUCKUP_AMOUNT=$(cat ~/proxy_fuckups | wc -l)
+START=$(date +"%b %d, %Y" --date=$(head -n1 ~/proxy_fuckups))
+echo "The proxy has now crapped up $FUCKUP_AMOUNT times since $START"

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+END=$(date +%s)
+START=$(date --date=$(tail -n1 ~/proxy_fuckups) +%s)
+echo $((END-START)) | awk '{ print "Last time the proxy fucked up was: "int($1/3600)" hours, "int($1/60%60)" minutes and "int($1%60)" seconds ago" }'

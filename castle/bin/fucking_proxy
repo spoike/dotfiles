@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+fucking_proxy_query
 touch ~/proxy_fuckups
 date -u +"%Y-%m-%dT%H:%M:%SZ" >> ~/proxy_fuckups
-cat ~/proxy_fuckups | wc -l
+fucking_proxy_times
