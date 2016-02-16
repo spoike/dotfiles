@@ -14,6 +14,8 @@ elif [[ $platform == 'Darwin' ]]; then
 fi
 
 if [[ ! -x "$(command -v hub)" ]]; then
+  # TODO: Version check, you can get version from hub command like this:
+  # hub --version | grep hub | cut -d\  -f 3
   warn "github/hub is not installed"
   url=$(curl -s https://api.github.com/repos/github/hub/releases/latest > /dev/null | jq -r ".assets[].browser_download_url | select( contains(\"$platform\") )")
   file=`basename $url .tgz`
