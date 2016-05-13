@@ -23,6 +23,8 @@ Plugin 'freitass/todo.txt-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'bling/vim-bufferline'
+Plugin 'tpope/vim-surround'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()                  "required
 filetype plugin indent on          "required
@@ -73,3 +75,7 @@ if has("wildmenu")
   set wildmenu
   set wildmode=list:longest,full
 endif
+
+" Source the vimrc file
+map <Leader>s :tabe $MYVIMRC<cr>
+autocmd bufwritepost .vimrc source $MYVIMRC
