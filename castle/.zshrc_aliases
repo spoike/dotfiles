@@ -102,6 +102,13 @@ elif [[ $platform == 'Darwin' ]]; then
 	alias o='open'
 fi
 
+# List available tasks
+function lt() {
+  if [ -e package.json ]; then npm run; fi
+  if [ -e Gulpfile.js ]; then gulp --tasks; fi
+  if [ -e Gruntfile.js ]; then grunt --help --no-color; fi
+}
+
 # Open Web (using o alias)
 function ow() {
 	o http://localhost:$1
