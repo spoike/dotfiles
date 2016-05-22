@@ -72,3 +72,11 @@ if [[ ! -d $HOME/.tmuxifier ]]; then
 else
   ok "tmuxifier"
 fi
+
+if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
+  msg "Missing tmux plugin manager. Will attempt to clone..."
+  mkdir -p $HOME/.tmux/plugins
+  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+else
+  ok "tmux plugin manager"
+fi
