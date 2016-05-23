@@ -29,8 +29,13 @@ antigen bundles <<EOBUNDLES
   #kennethreitz/autoenv
 EOBUNDLES
 
-antigen theme agnoster
-antigen apply
+#antigen theme agnoster
+BULLETTRAIN_RUBY_SHOW=false
+BULLETTRAIN_NVM_SHOW=true
+BULLETTRAIN_STATUS_EXIT_SHOW=true
+BULLETTRAIN_CONTEXT_SHOW=false
+#BULLETTRAIN_CUSTOM_MSG=""
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # Projects w. autocomplete
 pd(){cd $HOME/Projects/$1;}
