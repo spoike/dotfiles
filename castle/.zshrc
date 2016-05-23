@@ -24,9 +24,9 @@ antigen bundles <<EOBUNDLES
 
   sdurrheimer/docker-compose-zsh-completion
   yonchu/grunt-zsh-completion
-  zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-history-substring-search
   #kennethreitz/autoenv
+  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 #antigen theme agnoster
