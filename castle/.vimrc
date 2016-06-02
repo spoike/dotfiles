@@ -13,6 +13,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'scrooloose/nerdtree.git'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-sensible'
 Plugin 'pangloss/vim-javascript'
 Plugin 'wavded/vim-stylus'
@@ -62,6 +63,7 @@ let g:ctrlp_custom_ignore = {
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Markdown folding
 let g:vim_markdown_folding_disabled=1
