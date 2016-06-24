@@ -15,6 +15,7 @@ if [[ -f /etc/debian_version ]]; then
   [ ! -x "$(command -v xsel)" ] && packages+=(xsel) || ok xsel
   [ ! -x "$(command -v iotop)" ] && packages+=(iotop) || ok iotop
   [ ! -x "$(command -v htop)" ] && packages+=(htop) || ok htop
+  [ ! -x "$(command -v task)" ] && packages+=(task) || ok task
   if [ ! -z "$packages" ]; then
     warn "Missing packages: ${packages}. Will now attempt to install with apt-get."
     sudo apt-get install $packages

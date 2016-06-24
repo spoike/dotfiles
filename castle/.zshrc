@@ -20,7 +20,7 @@ antigen bundles <<EOBUNDLES
   tmuxinator
   colorize
   rand-quote
-  #taskwarrior
+  taskwarrior
 
   sdurrheimer/docker-compose-zsh-completion
   yonchu/grunt-zsh-completion
