@@ -41,3 +41,12 @@ else
     brew install $packages
   fi
 fi
+
+stuff=$HOME/Projects/stuff
+
+if [[ ! -d $stuff/iTerm2-Color-Schemes ]]; then
+  msg "Missing Term2 Color Schemes will attempt to clone and build..."
+  git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git $stuff/iTerm2-Color-Schemes
+else
+  ok "iTerm2-Color-Schemes"
+fi
