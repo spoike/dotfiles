@@ -69,6 +69,14 @@ fi
 if [[ ! -d $HOME/.tmuxifier ]]; then
   msg "Missing tmuxifier. Will attempt to clone..."
   git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
+elif [[ ! -d $HOME/.tmuxifier/bin ]]; then
+  msg "Missing tmuxifier but directory exists. Attempt to init git..."
+  pushd $HOME
+  git init
+  git remote add origin https://github.com/jimeh/tmuxifier.git
+  git fetch
+  git checkout -t origin/master
+  popd
 else
   ok "tmuxifier"
 fi
