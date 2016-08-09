@@ -27,6 +27,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()                  "required
 filetype plugin indent on          "required
@@ -78,6 +79,12 @@ if has("wildmenu")
   set wildmenu
   set wildmode=list:longest,full
 endif
+
+" Invisible chars
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+" Colorscheme
+colorscheme peachpuff
 
 " Source the vimrc file
 map <Leader>s :tabe $MYVIMRC<cr>
