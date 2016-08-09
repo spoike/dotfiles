@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-sensible'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'wavded/vim-stylus'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'plasticboy/vim-markdown'
@@ -49,6 +50,9 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
 nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 nnoremap <Leader>f :Unite grep:.<cr>
+
+" vim-jsx Config
+let g:jsx_ext_required = 0
 
 " CtrlP Config
 let g:ctrlp_map = '<c-p>'
