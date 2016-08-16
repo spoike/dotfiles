@@ -71,7 +71,7 @@ if [[ ! -d $HOME/.tmuxifier ]]; then
   git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 elif [[ ! -d $HOME/.tmuxifier/bin ]]; then
   msg "Missing tmuxifier but directory exists. Attempt to init git..."
-  pushd $HOME
+  pushd $HOME/.tmuxifier
   git init
   git remote add origin https://github.com/jimeh/tmuxifier.git
   git fetch
