@@ -1,0 +1,10 @@
+--ignore-dir=.idea
+--ignore-dir=dist
+--ignore-dir=lib
+
+# make sure ack knows how to search for common filetypes used in NodeJS projects
+--ignore-dir=node_modules
+--type-set=coffee=.coffee
+--type-set=jade=.jade
+--type-set=feature=.feature
+--type-set=json=.json

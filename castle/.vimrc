@@ -28,6 +28,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
+Plugin 'mileszs/ack.vim'
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()                  "required
