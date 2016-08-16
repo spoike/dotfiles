@@ -35,6 +35,7 @@ else
   [ ! -x "$(command -v tmux)" ] && packages+=(tmux) || ok tmux
   [ ! -x "$(command -v task)" ] && packages+=(task) || ok task
   [ ! -x "$(command -v ack)" ] && packages+=(ack) || ok ack
+  [ ! -x "$(command -v ag)" ] && packages+=(the_silver_searcher) || ok ag
   [ ! -x "$(command -v reattach-to-user-namespace)" ] && packages+=(reattach-to-user-namespace) || ok reattach-to-user-namespace
   if [[ ! -z $packages ]]; then
     warn "Missing packages: ${packages}. Will now attempt to install with brew."
