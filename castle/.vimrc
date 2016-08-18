@@ -52,6 +52,21 @@ nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr
 nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 nnoremap <Leader>f :Unite grep:.<cr>
 
+" gp - select the pasted text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" highlight search
+" toggle
+nnoremap <localleader>h :set hlsearch!<cr>
+" clear search result
+nnoremap <localleader>ch :nohlsearch<cr>
+
+" reindent the whole file
+nnoremap <localleader>= gg=G''
+
+" additional insert mode commands
+inoremap <c-d> <esc>ddi
+
 " vim-jsx Config
 let g:jsx_ext_required = 0
 
