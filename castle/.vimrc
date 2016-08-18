@@ -89,7 +89,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nmap <localleader>n :NERDTreeFind<CR>
+nnoremap <localleader>n :NERDTreeFind<CR>
 
 " Markdown folding
 let g:vim_markdown_folding_disabled=1
