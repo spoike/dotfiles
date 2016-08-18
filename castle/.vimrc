@@ -48,10 +48,6 @@ nnoremap <C-l> :NumbersToggle<CR>
 setl number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
-nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
-nnoremap <Leader>f :Unite grep:.<cr>
-
 " Bindings for ack.vim
 nnoremap <localleader>a :Ack!<space>
 vnoremap <localleader>a y:Ack! <C-r>=fnameescape(@")<CR><CR>
