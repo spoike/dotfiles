@@ -105,7 +105,9 @@ endif
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 " Colorscheme
-colorscheme peachpuff
+"colorscheme peachpuff
+colorscheme wombat256i
+"colorscheme miko
 
 " Source the vimrc file
 map <Leader>s :tabe $MYVIMRC<cr>
