@@ -52,6 +52,10 @@ nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr
 nnoremap <Leader>b :Unite -buffer-name=buffers -winheight=10 buffer<cr>
 nnoremap <Leader>f :Unite grep:.<cr>
 
+" Bindings for ack.vim
+nnoremap <localleader>a :Ack!<space>
+vnoremap <localleader>a y:Ack! <C-r>=fnameescape(@")<CR><CR>
+
 " gp - select the pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
