@@ -109,6 +109,13 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 colorscheme wombat256i
 "colorscheme miko
 
-" Source the vimrc file
+" Source the vimrc file automatically on write
 map <Leader>s :tabe $MYVIMRC<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
+
+try
+   execute "silent! source .vimrc." . $USER
+catch
+   " no-op
+endtry
+
