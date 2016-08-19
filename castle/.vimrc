@@ -83,8 +83,12 @@ let g:ctrlp_custom_ignore = {
 
 " Nerdtree Config
 map <C-n> :NERDTreeToggle<CR>
+" Always start NERDTree
+" autocmd vimenter * NERDTree
+" Open NERDTree automatically if no files specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Closes if only NerdTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <localleader>n :NERDTreeFind<CR>
 
