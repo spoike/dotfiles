@@ -31,6 +31,7 @@ Plugin 'tpope/vim-dotenv'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mileszs/ack.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()                  "required
 filetype plugin indent on          "required
