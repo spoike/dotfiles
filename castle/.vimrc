@@ -122,6 +122,9 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 colorscheme wombat256i
 "colorscheme miko
 
+" Mouse mode
+set mouse=a
+
 " open todo.txt file in project root
 nnoremap <localleader>t :10sp todo.txt<cr>
 
