@@ -70,6 +70,12 @@ nnoremap <localleader>= gg=G''
 " additional insert mode commands
 inoremap <c-d> <esc>ddi
 
+" vsplit command
+nnoremap <localleader>s :vs<cr>
+
+" select all
+nnoremap <C-a> ggVG
+
 " vim-jsx Config
 let g:jsx_ext_required = 0
 
@@ -115,6 +121,9 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 "colorscheme peachpuff
 colorscheme wombat256i
 "colorscheme miko
+
+" open todo.txt file in project root
+nnoremap <localleader>t :10sp todo.txt<cr>
 
 " Source the vimrc file automatically on write
 map <Leader>s :tabe $MYVIMRC<cr>
