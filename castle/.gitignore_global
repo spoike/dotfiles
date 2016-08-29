@@ -40,3 +40,7 @@ Thumbs.db
 #######
 *.swp
 
+# todo.txt files #
+##################
+todo.txt
+
