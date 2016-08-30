@@ -133,7 +133,7 @@ map <Leader>s :tabe $MYVIMRC<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 try
-   execute "silent! source .vimrc." . $USER
+   execute "silent! source " . $MYVIMRC . "." . $USER
 catch
    " no-op
 endtry
