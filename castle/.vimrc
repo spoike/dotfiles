@@ -126,7 +126,7 @@ colorscheme wombat256i
 set mouse=a
 
 " open todo.txt file in project root
-nnoremap <localleader>t :10sp todo.txt<cr>
+nnoremap <localleader>t :bo 5sp todo.txt<cr>
 
 " Source the vimrc file automatically on write
 map <Leader>s :tabe $MYVIMRC<cr>
