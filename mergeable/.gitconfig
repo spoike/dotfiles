@@ -1,7 +1,7 @@
 [core]
 	editor = vim
-	excludesfile = $HOME/.gitignore_global
-	hooksPath = $HOME/.git_hooks
+	excludesfile = ~/.gitignore_global
+	hooksPath = ~/.git_hooks
 [alias]
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	lsd = "!lsd"
