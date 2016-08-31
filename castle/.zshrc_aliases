@@ -26,6 +26,7 @@ alias ne='npm-exec'
 alias devlog='vim ~/Projects/devlog/todo.txt'
 alias devdone='vim ~/Projects/devlog/done.txt'
 alias zshconfig="vim ~/.zshrc"
+alias fix='vim $(git diff --name-only | uniq)'
 
 # Docker
 alias dicker='docker'
