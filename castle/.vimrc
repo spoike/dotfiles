@@ -52,8 +52,9 @@ setl number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Bindings for ack.vim
-nnoremap <localleader>a :Ack!<space>
-vnoremap <localleader>a y:Ack! <C-r>=nameescape(@0)<CR><CR>
+nnoremap <localleader>a<space> :Ack!<space>
+nnoremap <localleader>aw :Ack! <cword><cr>
+xnoremap <localleader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
 
 " gp - select the pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
