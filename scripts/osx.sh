@@ -20,10 +20,18 @@ else
     ok "XCode Command-line Tools"
   fi
 
+  # Install Homebrew http://brew.sh/
   if [ ! -x "$(command -v brew)" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
-    ok "Homebrew (brew)"
+	  ok "brew (Homebrew)"
+  fi
+
+  # Install Cask https://caskroom.github.io/
+  if ! brew info cask &>/dev/null; then
+    brew tap caskroom/cask
+  else
+    ok "brew cask"
   fi
 
   packages=()
