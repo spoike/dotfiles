@@ -60,3 +60,10 @@ if [[ ! -d $stuff/iTerm2-Color-Schemes ]]; then
 else
   ok "iTerm2-Color-Schemes"
 fi
+
+if [[ ! -d $stuff/seoul256-iTerm ]]; then
+  msg "Missing seoul256-iTerm will attempt to clone and build..."
+  git clone https://github.com/mikker/seoul256-iTerm.git $stuff/seoul256-iTerm
+else
+  ok "seoul256-iTerm"
+fi
