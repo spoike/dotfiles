@@ -16,6 +16,7 @@ Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'vimwiki/vimwiki'
+Plug 'junegunn/vim-easy-align'
 
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -144,6 +145,12 @@ let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_default_coefficient = 0.7
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Easy Align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Mouse mode
 set mouse=a
