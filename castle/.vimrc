@@ -40,11 +40,11 @@ filetype plugin indent on          "required
 " Airline Config
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "wombat"
-let mapleader = "'"
 let &t_Co=256
 
-" Localleader map
-let maplocalleader = "-"
+" Map leaders
+let mapleader = "'"
+let maplocalleader = "''"
 
 " Linenumbers Config
 nnoremap <C-l> :NumbersToggle<CR>
