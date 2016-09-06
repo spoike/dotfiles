@@ -1,41 +1,54 @@
-set nocompatible                   "required
-filetype off                       "required
+set nocompatible
+filetype plugin on
 
-set rtp+=~/.vim/bundle/Vundle.vim  "required
+call plug#begin('~/.vim/plugged')
 
-call vundle#begin()                "required
+" General Purpose Utilities
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/seoul256.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'myusuf3/numbers.vim'
+Plug 'mattn/emmet-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'vimwiki/vimwiki'
 
-Plugin 'VundleVim/Vundle.vim'      "required
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-sensible'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'wavded/vim-stylus'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'mattn/emmet-vim'
-Plugin 'clones/vim-zsh'
-Plugin 'freitass/todo.txt-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'bling/vim-bufferline'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-dotenv'
-Plugin 'vimwiki/vimwiki'
-Plugin 'mileszs/ack.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'elixir-lang/vim-elixir'
+" Distraction Free writing
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+  \ | Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
-call vundle#end()                  "required
-filetype plugin indent on          "required
+" Status Bar Plugins
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
+
+" General Purpose Syntax Checker
+Plug 'scrooloose/syntastic'
+Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javascript' }
+
+" NERDTree
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Search Plugin
+Plug 'mileszs/ack.vim'
+
+" Syntax
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'clones/vim-zsh', { 'for': 'zsh' }
+Plug 'freitass/todo.txt-vim', { 'for': 'todo' }
+Plug 'tpope/vim-dotenv'
+
+call plug#end()
+
+syntax on
 
 " Airline Config
 let g:airline_powerline_fonts = 1
@@ -96,7 +109,7 @@ map <C-n> :NERDTreeToggle<CR>
 " autocmd vimenter * NERDTree
 " Open NERDTree automatically if no files specified
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Closes if only NerdTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <localleader>n :NERDTreeFind<CR>
@@ -122,6 +135,15 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 "colorscheme peachpuff
 colorscheme wombat256i
 "colorscheme miko
+"colorscheme seoul256
+"set background=dark
+
+" Goyo+Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_default_coefficient = 0.7
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Mouse mode
 set mouse=a

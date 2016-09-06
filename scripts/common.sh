@@ -13,15 +13,18 @@ else
   ok antigen
 fi
 
-# Install Vundle for vim
-if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
-  msg "Installing Vundle for vim"
-  mkdir -p $HOME/.vim/bundle
-  # Install Vundle and all plugins
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim && vim +PluginInstall +qall && ok Vundle
+# Install vim-plug
+## Remove old Vundle install
+if [ -d $HOME/.vim/bundle/Vundle.vim ]; then
+  rm -rf $HOME/.vim/bundle
+fi
+if [ ! -f $HOME/.vim/autoload/plug.vim ]; then
+  msg "Installing vim-plug"
+  ## Install vim-plug and all specified plugins
+  curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && vim +PlugInstall +qall && ok "vim-plug"
 else
-  #vim +PluginUpdate +qall
-  ok Vundle
+  ok "vim-plug"
 fi
 
 # Install Node Version Manager
