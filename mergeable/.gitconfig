@@ -44,9 +44,10 @@
 	publish = "!git push -u origin $(git branch-name)"
 	unpublish = "!git push origin :$(git branch-name)"
 	unstage = reset HEAD
+	choppa = push -u
 [merge]
 	tool = kdiff3
 [push]
-	default = simple
+	default = current
 [color]
 	diff = true
