@@ -174,3 +174,11 @@ catch
    " no-op
 endtry
 
+" Interactive Git Rebase
+autocmd FileType gitrebase nnoremap <buffer> <localleader>p _cwpick<esc>_
+autocmd FileType gitrebase nnoremap <buffer> <localleader>r _cwreword<esc>_
+autocmd FileType gitrebase nnoremap <buffer> <localleader>e _cwedit<esc>_
+autocmd FileType gitrebase nnoremap <buffer> <localleader>s _cwsquash<esc>_
+autocmd FileType gitrebase nnoremap <buffer> <localleader>f _cwfixup<esc>_
+autocmd FileType gitrebase nnoremap <buffer> <localleader>x _cwexec<esc>_
+autocmd FileType gitrebase nnoremap <buffer> <localleader>d _cwdrop<esc>_
