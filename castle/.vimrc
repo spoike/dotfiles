@@ -18,6 +18,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
+Plug 'mbbill/undotree'
 
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -152,6 +154,9 @@ autocmd! User GoyoLeave Limelight!
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Undo Tree
+nnoremap <F5> :UndotreeToggle<cr>
 
 " Mouse mode
 set mouse=a
