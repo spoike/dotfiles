@@ -175,6 +175,10 @@ catch
 endtry
 
 " Interactive Git Rebase
+function! ReplaceRebaseCommand(rebaseCommand)
+  :exe "s-^\(pick<bar>reword<bar>edit<bar>squash<bar>fixup<bar>exec<bar>drop\)\?-" . a:rebaseCommand . "-g<esc>"
+endfunction
+" normal mode
 autocmd FileType gitrebase nnoremap <buffer> <localleader>p _cwpick<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>r _cwreword<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>e _cwedit<esc>_
@@ -182,3 +186,12 @@ autocmd FileType gitrebase nnoremap <buffer> <localleader>s _cwsquash<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>f _cwfixup<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>x _cwexec<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>d _cwdrop<esc>_
+" visual mode
+autocmd FileType gitrebase vnoremap <buffer> <localleader>p :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:pick:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>r :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:reword:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>e :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:edit:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>s :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:squash:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>f :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:fixup:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>x :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:exec:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>d :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:drop:g<cr>
+
