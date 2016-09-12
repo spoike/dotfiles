@@ -20,6 +20,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
+Plug 'schickling/vim-bufonly'
 
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
