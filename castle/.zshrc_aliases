@@ -103,6 +103,11 @@ elif [[ $platform == 'Darwin' ]]; then
 	alias o='open'
 fi
 
+# iCal stuff on Mac OSX
+if [[ $platform == 'Darwin' ]]; then
+	alias today='icalBuddy eventsToday'
+fi
+
 # List available tasks
 function lt() {
   if [ -e package.json ]; then npm run; fi
