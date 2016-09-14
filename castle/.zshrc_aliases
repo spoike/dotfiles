@@ -26,7 +26,8 @@ alias ne='npm-exec'
 alias devlog='vim ~/Projects/devlog/todo.txt'
 alias devdone='vim ~/Projects/devlog/done.txt'
 alias zshconfig="vim ~/.zshrc"
-alias fix='vim $(git diff --name-only | uniq)'
+alias fix='vim $(git diff --name-only | uniq)' #fix
+alias gse='vim $(git status -s | cut -d\  -f3)' #git status edit
 
 # Docker
 alias dicker='docker'
@@ -105,7 +106,8 @@ fi
 
 # iCal stuff on Mac OSX
 if [[ $platform == 'Darwin' ]]; then
-	alias today='icalBuddy eventsToday'
+	alias today_verbose='icalBuddy -n -f eventsToday'
+	alias today='icalBuddy -f -npn -nc -ps "/ » /" -iep "title,location,datetime,notes" -po "datetime,title,location,notes" -eed eventsToday'
 fi
 
 # List available tasks
