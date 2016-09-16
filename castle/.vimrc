@@ -21,6 +21,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
 Plug 'schickling/vim-bufonly'
+Plug 'MattesGroeger/vim-bookmarks'
 
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -174,6 +175,39 @@ try
 catch
    " no-op
 endtry
+
+" MattesGroeger/vim-bookmarks
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=22 ctermfg=NONE
+let g:bookmark_sign = '🔖'
+let g:bookmark_highlight_lines = 1
+" unbind vim-bookmark key mappings when NERDtree is active
+let g:bookmark_no_default_key_mappings = 1
+function! BookmarkMapKeys()
+	nmap mm :BookmarkToggle<CR>
+	nmap mi :BookmarkAnnotate<CR>
+	nmap mn :BookmarkNext<CR>
+	nmap mp :BookmarkPrev<CR>
+	nmap ma :BookmarkShowAll<CR>
+	nmap mc :BookmarkClear<CR>
+	nmap mx :BookmarkClearAll<CR>
+	nmap mkk :BookmarkMoveUp
+	nmap mjj :BookmarkMoveDown
+endfunction
+function! BookmarkUnmapKeys()
+	unmap mm
+	unmap mi
+	unmap mn
+	unmap mp
+	unmap ma
+	unmap mc
+	unmap mx
+	unmap mkk
+	unmap mjj
+endfunction
+autocmd BufEnter * :call BookmarkMapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+
 
 " Interactive Git Rebase
 function! ReplaceRebaseCommand(rebaseCommand)
