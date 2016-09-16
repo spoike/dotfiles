@@ -37,9 +37,17 @@ BULLETTRAIN_CONTEXT_SHOW=false
 #BULLETTRAIN_CUSTOM_MSG=""
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
-# Projects w. autocomplete
+# Autocompletions
+# Read about them here: https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
+## Add .zsh-functions to fpath
+fpath=($HOME/.zsh-functions $fpath)
+
+## Projects w. autocomplete
 pd(){cd $HOME/Projects/$1;}
 compctl -W $HOME/Projects -/ pd
+
+## Quick reload of completion script
+reload_cmpl(){unfunction $1 && autoload -U $1;}
 
 [ -e "${HOME}/.zshrc_aliases" ] && source "${HOME}/.zshrc_aliases"
 [ -e "${HOME}/.zshrc_profile" ] && source "${HOME}/.zshrc_profile"

@@ -1,0 +1,51 @@
+#compdef spotify
+#
+# Auto completion for shpotify. Install in Mac OSX with `brew install shpotify`
+
+local cmds state ret=1
+
+_arguments '1: :->cmds' \
+  '*:: :->args' && ret=0
+
+case $state in
+  cmds)
+    _values "spotify command" \
+      "play[Resumes playback where Spotify last left off]" \
+      "next[Skips to the next song in a playlist]" \
+      "prev[Returns to the previous song in a playlist]" \
+      "pos[Jumps to a time (in secs) in the current song]" \
+      "pause[Pauses Spotify playback]" \
+      "vol[Sets the volume to an amount between 0 and 100]" \
+      "status[Shows the current player status]" \
+      "share[Copies the current song URL to the clipboard]" \
+      "toggle[Playback modes]" \
+      "quit[Stops playback and quits Spotify]"
+    ret=0
+    ;;
+  args)
+    case $line[1] in
+      play)
+        _values "spotify play" \
+	  "album[Finds an album by name and plays it]" \
+	  "artist[Finds an artist by name and plays it]" \
+	  "list[Finds a playlist by name and plays it]"
+	ret=0
+	;;
+      vol)
+        _values "spotify vol" \
+          "up[Increases the volume by 10%]" \
+          "down[Decreases the volume by 10%]" \
+          "show[Shows the current Spotify volume]"
+        ret=0
+        ;;
+      toggle)
+        _values "spotify toggle" \
+	  "shuffle[Toggles shuffle playback mode]" \
+	  "repeat[Toggles repeat playback mode]"
+        ret=0
+        ;;
+    esac
+    ;;
+esac
+
+return ret
