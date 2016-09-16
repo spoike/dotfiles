@@ -178,8 +178,8 @@ endtry
 
 " MattesGroeger/vim-bookmarks
 highlight BookmarkSign ctermbg=NONE ctermfg=160
-highlight BookmarkLine ctermbg=22 ctermfg=NONE
 let g:bookmark_sign = '🔖'
+highlight BookmarkLine ctermbg=22 ctermfg=NONE
 let g:bookmark_highlight_lines = 1
 " unbind vim-bookmark key mappings when NERDtree is active
 let g:bookmark_no_default_key_mappings = 1
