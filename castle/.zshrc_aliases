@@ -10,13 +10,13 @@ alias n4='nvm use 4.2'
 alias nls='npm run'
 alias nw='npm run watch'
 function nt() {
-  TASKS_ARR=$(npm run | grep -v "^    " | sed -e 's/^[[:space:]]*//' | grep watch | grep test)
-  npm run $(echo $TASKS_ARR | tail -n 1)
+	TASKS_ARR=$(npm run | grep -v "^    " | sed -e 's/^[[:space:]]*//' | grep watch | grep test)
+	npm run $(echo $TASKS_ARR | tail -n 1)
 }
 function on() {
-  ports=("${(@f)$(netstat -anp 2> /dev/null | grep LISTEN.*node | awk '{ print $4 }' | cut -d':' -f4)}")
+	ports=("${(@f)$(netstat -anp 2> /dev/null | grep LISTEN.*node | awk '{ print $4 }' | cut -d':' -f4)}")
 	for port in $ports; do
-	  o http://localhost:$port
+		o http://localhost:$port
 	done
 }
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -40,31 +40,31 @@ function h() {
 
 # AWS
 function s3ls() {
-    aws s3 ls s3://$1
+	aws s3 ls s3://$1
 }
 
 # Find file
 function ff() {
-    find $(pwd) -name "*$1*" | \
-        grep -v -E /\(node_modules\|bower_components\|.git\)
+	find $(pwd) -name "*$1*" | \
+		grep -v -E /\(node_modules\|bower_components\|.git\)
 }
 
 # Find in file
 function f()
 {
-    grep --color=always \
-        -Rnw -i "$1" \
-        --include=**\*.{js,json,sh,yml} \
-        --exclude-dir={node_modules,bower_components} \
-        $(pwd) | \
-        sed -e "s/\t//g" | \
-        sed "s/:/:\t /2" | \
-        column -ts $'\t'
+	grep --color=always \
+		-Rnw -i "$1" \
+		--include=**\*.{js,json,sh,yml} \
+		--exclude-dir={node_modules,bower_components} \
+		$(pwd) | \
+		sed -e "s/\t//g" | \
+		sed "s/:/:\t /2" | \
+		column -ts $'\t'
 }
 function fl()
 {
-    f $1 | \
-        less -S
+	f $1 | \
+		less -S
 }
 
 # Mongo
@@ -112,9 +112,9 @@ fi
 
 # List available tasks
 function lt() {
-  if [ -e package.json ]; then npm run; fi
-  if [ -e Gulpfile.js ]; then gulp --tasks; fi
-  if [ -e Gruntfile.js ]; then grunt --help --no-color; fi
+	if [ -e package.json ]; then npm run; fi
+	if [ -e Gulpfile.js ]; then gulp --tasks; fi
+	if [ -e Gruntfile.js ]; then grunt --help --no-color; fi
 }
 
 # Open Web (using o alias)
@@ -136,7 +136,7 @@ function work_create() {
 	case "${ans}" in
 		y|Y)
 			f=$(pwd -P)/.workspace.zsh
-			echo "alias dump='git fetch --all'" > $(pwd -P)/.workspace.zsh 
+			echo "alias dump='git fetch --all'" > $(pwd -P)/.workspace.zsh
 			printf "Created file at $f\n"
 			vim $f
 			return 0
