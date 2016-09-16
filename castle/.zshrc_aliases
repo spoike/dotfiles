@@ -132,7 +132,7 @@ function or() {
 function work_create() {
 	printf "Create workspace scripts? (yN) "
 	read -rs -k 1 ans
-	printf "${ans}"
+	printf "${ans}\n"
 	case "${ans}" in
 		y|Y)
 			f=$(pwd -P)/.workspace.zsh
