@@ -39,6 +39,7 @@ Thumbs.db
 # vim #
 #######
 *.swp
+.vim-bookmarks
 
 # todo.txt files #
 ##################
