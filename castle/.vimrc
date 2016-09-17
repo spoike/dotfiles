@@ -23,6 +23,10 @@ Plug 'mbbill/undotree'
 Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
 
+if has("gui_macvim")
+  Plug 'Valloric/YouCompleteMe'    "only works on macvim
+endif
+
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
   \ | Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
@@ -42,6 +46,7 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] } | Plug 'Xuy
 Plug 'mileszs/ack.vim'
 
 " Syntax
+Plug 'ryym/vim-riot', { 'for': 'riot' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
