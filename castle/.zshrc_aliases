@@ -29,7 +29,20 @@ alias zshconfig="vim ~/.zshrc"
 alias fix='vim $(git diff --name-only | uniq)' #fix
 alias gse='vim $(git status -s | cut -d\  -f3)' #git status edit
 function latest() {
-	git log --no-merges --name-status -${1:-10} . | grep ^[MAR][[:space:]] | cut -f2 | uniq
+	local interactive="",latestChanges
+	while getopts ":i" opt; do
+		case "$opt" in
+			i)
+				interactive="ON"
+				;;
+		esac
+	done
+	shift "$((OPTIND - 1))"
+	latestChanges=$(git log --no-merges --name-status -${1:-10} . | grep ^[MAR][[:space:]] | cut -f2 | uniq)
+	if [[ "$interactive" == "ON" ]]; then
+		latestChanges=$(git log --no-merges --name-status -${1:-10} . | grep ^[MAR][[:space:]] | cut -f2 | uniq | peco)
+	fi
+	printf $latestChanges
 }
 
 # Docker
