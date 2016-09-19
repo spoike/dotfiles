@@ -28,6 +28,9 @@ alias devdone='vim ~/Projects/devlog/done.txt'
 alias zshconfig="vim ~/.zshrc"
 alias fix='vim $(git diff --name-only | uniq)' #fix
 alias gse='vim $(git status -s | cut -d\  -f3)' #git status edit
+function latest() {
+	git log --name-status -${1:-10} . | grep ^[MAR][[:space:]] | uniq | cut -f2
+}
 
 # Docker
 alias dicker='docker'
