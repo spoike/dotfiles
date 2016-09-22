@@ -23,7 +23,9 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias ne='npm-exec'
 
 # Quick Edit
-alias zshconfig="vim ~/.zshrc"
+function edit_config() {
+	vim $(find -f ~/dotfiles/castle | peco)
+}
 alias git_merge_conflicts='git diff --name-only | uniq'
 alias git_status_changes='git status -s | cut -d\  -f3'
 function git_latest_changes() {
