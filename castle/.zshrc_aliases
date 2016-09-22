@@ -23,8 +23,6 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias ne='npm-exec'
 
 # Quick Edit
-alias devlog='vim ~/Projects/devlog/todo.txt'
-alias devdone='vim ~/Projects/devlog/done.txt'
 alias zshconfig="vim ~/.zshrc"
 alias git_merge_conflicts='git diff --name-only | uniq'
 alias git_status_changes='git status -s | cut -d\  -f3'
