@@ -40,7 +40,7 @@ Plug 'scrooloose/syntastic'
 Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javascript' }
 
 " NERDTree
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Search Plugin
 Plug 'mileszs/ack.vim'
