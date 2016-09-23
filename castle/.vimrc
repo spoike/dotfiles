@@ -68,8 +68,8 @@ let g:airline_theme = "wombat"
 let &t_Co=256
 
 " Map leaders
-let mapleader = "'"
-let maplocalleader = "''"
+let mapleader = "-"
+let maplocalleader = "--"
 
 " Linenumbers Config
 nnoremap <C-l> :NumbersToggle<CR>
