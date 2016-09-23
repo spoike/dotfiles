@@ -22,6 +22,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
 Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'mhinz/vim-startify'
 
 if has("gui_macvim")
   Plug 'Valloric/YouCompleteMe'    "only works on macvim
