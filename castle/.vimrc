@@ -77,9 +77,9 @@ setl number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Bindings for ack.vim
-nnoremap <localleader>a<space> :Ack!<space>
-nnoremap <localleader>aw :Ack! <cword><cr>
-xnoremap <localleader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
+nnoremap <leader>a<space> :Ack!<space>
+nnoremap <leader>aw :Ack! <cword><cr>
+xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
 
 " gp - select the pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -124,7 +124,8 @@ autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Closes if only NerdTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <localleader>n :NERDTreeFind<CR>
+" Show current buffer in NERDTree
+nnoremap <leader>n :NERDTreeFind<CR>
 
 " Markdown folding
 let g:vim_markdown_folding_disabled=1
