@@ -13,6 +13,23 @@ else
   ok antigen
 fi
 
+# Install antibody (faster than antigen)
+if [ -d $HOME/.antigen ]; then
+  echo "rm -rf $HOME/.antigen"
+fi
+if [ ! -x "$(command -v antibody)" ]; then
+  curl -s https://raw.githubusercontent.com/getantibody/installer/master/install | bash -s
+else
+  ok antibody
+fi
+
+# Install prezto (zsh config framework)
+if [ ! -d $HOME/.zprezto ]; then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+else
+  ok prezto
+fi
+
 # Install vim-plug
 ## Remove old Vundle install
 if [ -d $HOME/.vim/bundle/Vundle.vim ]; then
