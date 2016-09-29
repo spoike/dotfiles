@@ -2,52 +2,115 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 	hooksPath = ~/.git_hooks
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
+	# list aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+
+	# status
+	st = status -s
+
+	# commit
+	ci = commit
+	amend = commit --amend		# amend last commit
+	amen = commit --amend --no-edit	# amend last commit without changing commit message
+
+	# checkout
+	co = checkout
+	cm = checkout master
+	nb = checkout -b		# create and switch to new branch
+
+	# branches
+	br = branch -v			# show branch (verbose)
+	recentbranch = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+	# remote stuff
+	fu = fetch upstream
+	r = remote -v			# show remotes (verbose)
+
+	# add
+	a = add
+	chunkyadd = add --patch
+
+	# log
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	lsd = "!lsd"
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 	lg = log --format="%C(cyan)%s%Creset\\ %C(dim\\ white)(%ar)%Creset%n%w(72,4,4)%b" --graph
+	filelog = log -u
+
+	# assume files
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+
+	# stash
+	ss = stash save -u		# stash together with files not in index
+	sp = stash pop			# pop the stash
+	sl = stash list			# list stashes
+	sa = stash apply		# restore changes
+	sd = stash drop			# drop stash (destroy changes)
+
+	# diff
 	dlc = diff --cached HEAD^
-	dr  = "!f() { git diff "$1"^.."$1"; }; f"
-	cp = cherry-pick
-	st = status -s
-	cl = clone
-	ci = commit
-	co = checkout
-	br = branch
 	diff = diff --word-diff
 	dc = diff --cached
-	la = "!git config -l | grep alias | cut -c 7-"
-	r = reset
-	r1 = reset HEAD^
-	r2 = reset HEAD^^
-	rh = reset --hard
-	rh1 = reset HEAD^ --hard
-	rh2 = reset HEAD^^ --hard
+	dr = "!f() { git diff "$1"^.."$1"; }; f"
+	last = diff HEAD^
+
+	# cherry pick
+	cp = cherry-pick -x		# -x: amend message with "cherry picked from"
+
+	# reset/undo
 	undo = reset --soft HEAD^
-	sl = stash list
-	sa = stash apply
-	ss = stash save -u
-	sp = stash pop
+	unstage = reset HEAD
+
+	# find stuff
 	gr = grep -Ii
 	pl = "!git stash; git pull; git stash pop"
 	f = "!git ls-files | grep -i"
-	out = fire
-	going = fire
+
+	# publish stuff to upstream
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	publish = "!git push -u origin $(git branch-name)"
 	unpublish = "!git push origin :$(git branch-name)"
-	unstage = reset HEAD
 	choppa = push -u
+	out = fire
+	going = fire
+
+	# wip
+	wip = !git add . && git commit -n -m "WIP"
+
+	# GITHUB PRs (main in upstream)
+	pr = !git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1 && :
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 [merge]
 	tool = kdiff3
 [push]
 	default = current
 [color]
 	diff = true
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
