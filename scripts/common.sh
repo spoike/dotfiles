@@ -86,6 +86,21 @@ else
   ok "powerline fonts"
 fi
 
+if [[ ! -d $stuff/diff-so-fancy ]]; then
+  msg "Missing diff-so-fancy. Will attempt to clone and install..."
+  git clone https://github.com/so-fancy/diff-so-fancy.git $stuff/diff-so-fancy
+  pushd $HOME/bin
+  ln -s $stuff/diff-so-fancy/diff-so-fancy diff-so-fancy
+  ln -s $stuff/diff-so-fancy/third_party/diff-highlight diff-highlight
+  mkdir -p libexec
+  ln -s $stuff/diff-so-fancy/libexec/diff-so-fancy.pl libexec/diff-so-fancy.pl
+  msg "Setting up pager for diff-so-fancy..."
+  git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+  popd
+else
+  ok "diff-so-fancy"
+fi
+
 if [[ ! -d $HOME/.tmuxifier ]]; then
   msg "Missing tmuxifier. Will attempt to clone..."
   git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
