@@ -124,6 +124,8 @@ elif [[ $platform == 'Darwin' ]]; then
 	export CLICOLOR=1
 	alias o='open'
 fi
+alias diskspace_report="df -P -kHl"
+alias free_diskspace_report="diskspace_report"
 
 # iCal stuff on Mac OSX
 if [[ $platform == 'Darwin' ]]; then
