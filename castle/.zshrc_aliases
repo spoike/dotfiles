@@ -181,3 +181,9 @@ function work() {
 
 # Quick open useful web pages/apps
 alias odd='o http://devdocs.io'
+
+# Update Stuff
+if [[ $platform == 'Linux' ]]; then
+elif [[ $platform == 'Darwin' ]]; then
+	alias update_brew='brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor'
+fi
