@@ -77,7 +77,7 @@ setl number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Bindings for ack.vim
-nnoremap <leader>a<space> :Ack!<space>
+nnoremap <leader>aa :Ack!<space>
 nnoremap <leader>aw :Ack! <cword><cr>
 xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
 
