@@ -15,6 +15,10 @@ fpath=($HOME/.zsh-functions $fpath)
 pd(){cd $HOME/Projects/$1;}
 compctl -W $HOME/Projects -/ pd
 
+# Reverse history search with Ctrl-R
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
+
 ## Quick reload of completion script
 reload_cmpl(){unfunction $1 && autoload -U $1;}
 
