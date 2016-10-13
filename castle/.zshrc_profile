@@ -33,12 +33,6 @@ fi
 # Making sure tmux title doesn't get renamed all the time you change a directory
 DISABLE_AUTO_TITLE=true
 
-# byobu
-platform=`uname`
-if [[ ! $platform == 'Linux' ]]; then
-    [ ! -x "$(command -v byobu)" ] && export BYOBU_PREFIX=$(brew --prefix)
-fi
-
 # tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
