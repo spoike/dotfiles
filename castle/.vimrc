@@ -127,6 +127,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Show current buffer in NERDTree
 nnoremap <leader>n :NERDTreeFind<CR>
 
+" netrw Config
+let g:netrw_banner=0       " disable banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1         " open splits to the right
+let g:netrw_liststyle=3    " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+
 " Markdown folding
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
