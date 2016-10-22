@@ -77,7 +77,7 @@ setl number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Bindings for ack.vim
-nnoremap <leader>a<space> :Ack!<space>
+nnoremap <leader>aa :Ack!<space>
 nnoremap <leader>aw :Ack! <cword><cr>
 xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
 
@@ -126,6 +126,13 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Show current buffer in NERDTree
 nnoremap <leader>n :NERDTreeFind<CR>
+
+" netrw Config
+let g:netrw_banner=0       " disable banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1         " open splits to the right
+let g:netrw_liststyle=3    " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Markdown folding
 let g:vim_markdown_folding_disabled=1

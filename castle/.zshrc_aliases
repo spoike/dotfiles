@@ -124,6 +124,8 @@ elif [[ $platform == 'Darwin' ]]; then
 	export CLICOLOR=1
 	alias o='open'
 fi
+alias diskspace_report="df -P -kHl"
+alias free_diskspace_report="diskspace_report"
 
 # iCal stuff on Mac OSX
 if [[ $platform == 'Darwin' ]]; then
@@ -181,3 +183,9 @@ function work() {
 
 # Quick open useful web pages/apps
 alias odd='o http://devdocs.io'
+
+# Update Stuff
+if [[ $platform == 'Linux' ]]; then
+elif [[ $platform == 'Darwin' ]]; then
+	alias update_brew='brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor'
+fi

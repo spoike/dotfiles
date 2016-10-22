@@ -50,3 +50,7 @@ done.txt
 ################################################
 .workspace.zsh
 .workspace.sh
+
+# yarn lock files #
+###################
+yarn.lock
