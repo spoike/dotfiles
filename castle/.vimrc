@@ -1,5 +1,6 @@
 set nocompatible
 filetype plugin on
+set encoding=utf8
 
 call plug#begin('~/.vim/plugged')
 
@@ -23,6 +24,7 @@ Plug 'mbbill/undotree'
 Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons'
 
 if has("gui_macvim")
   Plug 'Valloric/YouCompleteMe'    "only works on macvim
