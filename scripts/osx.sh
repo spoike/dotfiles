@@ -69,3 +69,13 @@ if [[ ! -d $stuff/seoul256-iTerm ]]; then
 else
   ok "seoul256-iTerm"
 fi
+
+CODEFONT="Fura Code Retina Nerd Font Complete Mono.otf"
+if [[ ! -f ~/Library/Fonts/$CODEFONT ]]; then
+  msg "Missing \"$CODEFONT\", attempt to download and install"
+  pushd ~/Library/Fonts
+  curl -fLo "Fura Code Retina Nerd Font Complete Mono.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete%20Mono.otf 
+  popd
+else
+  ok "Font: \"$CODEFONT\""
+fi
