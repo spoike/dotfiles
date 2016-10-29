@@ -1,10 +1,17 @@
 .PHONY: help
 help:    ## Show this help.
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/:.*##/;/' | column -t -s ";"
 
 .PHONY: install
 install: ## Install dependencies
 	./install.sh
+
+.PHONY: download
+download: ## Fetch the latest and attempt to rebase
+	git pull --rebase
+
+.PHONY: update
+update: download install ## Update dotfiles
 
 .PHONY: merge
 merge:   ## Merge config files from ./mergeables
