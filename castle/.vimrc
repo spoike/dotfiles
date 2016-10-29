@@ -25,6 +25,7 @@ Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
+Plug 'jeetsukumaran/vim-buffergator', { 'on': ['BuffergatorOpen', 'BuffergatorToggle'] }
 
 if has("gui_macvim")
   Plug 'Valloric/YouCompleteMe'    "only works on macvim
