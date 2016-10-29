@@ -7,8 +7,8 @@ install: ## Install dependencies
 	./install.sh
 
 .PHONY: download
-download: ## Fetch the latest and attempt to rebase
-	git pull --rebase
+download: ## Fetch the latest
+	git pull
 
 .PHONY: update
 update: download install ## Update dotfiles
