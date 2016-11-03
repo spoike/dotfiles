@@ -74,6 +74,10 @@ if has("clipboard")
 	vnoremap <C-c> :w !pbcopy<CR><CR>
 endif
 
+" Fix vertical split separator
+set fillchars+=vert:│
+"autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
+
 " Airline Config
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "dracula"
