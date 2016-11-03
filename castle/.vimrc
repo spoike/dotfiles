@@ -74,6 +74,18 @@ if has("clipboard")
 	vnoremap <C-c> :w !pbcopy<CR><CR>
 endif
 
+" Invisible chars
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+" Colorscheme
+
+"colorscheme peachpuff
+colorscheme dracula
+"colorscheme wombat256i
+"colorscheme miko
+"colorscheme seoul256
+"set background=dark
+
 " Fix vertical split separator
 set fillchars+=vert:│
 "autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
@@ -164,17 +176,6 @@ if has("wildmenu")
   set wildmode=list:longest,full
 endif
 
-" Invisible chars
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-
-" Colorscheme
-
-"colorscheme peachpuff
-colorscheme dracula
-"colorscheme wombat256i
-"colorscheme miko
-"colorscheme seoul256
-"set background=dark
 
 " Goyo+Limelight
 let g:limelight_conceal_ctermfg = 'gray'
