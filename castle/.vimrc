@@ -4,11 +4,14 @@ set encoding=utf8
 
 call plug#begin('~/.vim/plugged')
 
+" Themes
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/seoul256.vim'
+Plug 'dracula/vim'
+
 " General Purpose Utilities
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/seoul256.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdcommenter'
@@ -67,7 +70,7 @@ syntax on
 
 " Airline Config
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "wombat"
+let g:airline_theme = "dracula"
 let &t_Co=256
 
 " Map leaders
@@ -155,8 +158,10 @@ endif
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 " Colorscheme
+
 "colorscheme peachpuff
-colorscheme wombat256i
+colorscheme dracula
+"colorscheme wombat256i
 "colorscheme miko
 "colorscheme seoul256
 "set background=dark
