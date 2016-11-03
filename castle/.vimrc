@@ -68,6 +68,12 @@ call plug#end()
 
 syntax on
 
+" Copy to clipboard keybindings in visual mode
+if has("clipboard")
+	vnoremap <C-x> :!pbcopy<CR>
+	vnoremap <C-c> :w !pbcopy<CR><CR>
+endif
+
 " Airline Config
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "dracula"
