@@ -29,6 +29,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jeetsukumaran/vim-buffergator', { 'on': ['BuffergatorOpen', 'BuffergatorToggle'] }
+Plug 'dr-chip-vim-scripts/ZoomWin', { 'on': 'ZoomWin' }
 Plug 'easymotion/vim-easymotion'
 
 if v:version > 700
