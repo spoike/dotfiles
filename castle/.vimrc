@@ -58,13 +58,9 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFind
 Plug 'mileszs/ack.vim'
 
 " Syntax
+Plug 'sheerun/vim-polyglot'
+" Note: please check if a syntax plugin isn't already in vim-polyglot
 Plug 'ryym/vim-riot', { 'for': 'riot' }
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'wavded/vim-stylus', { 'for': 'stylus' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'clones/vim-zsh', { 'for': 'zsh' }
 Plug 'freitass/todo.txt-vim', { 'for': 'todo' }
 Plug 'tpope/vim-dotenv'
@@ -274,3 +270,5 @@ autocmd FileType gitrebase vnoremap <buffer> <localleader>d :s:^\(pick\|reword\|
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+" automatically set filetype for json rc files
+au BufRead,BufNewFile .*rc set filetype=json
