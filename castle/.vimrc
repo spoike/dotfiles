@@ -29,6 +29,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jeetsukumaran/vim-buffergator', { 'on': ['BuffergatorOpen', 'BuffergatorToggle'] }
+Plug 'easymotion/vim-easymotion'
 
 if has("gui_macvim")
   Plug 'Valloric/YouCompleteMe'    "only works on macvim
@@ -264,4 +265,8 @@ autocmd FileType gitrebase vnoremap <buffer> <localleader>s :s:^\(pick\|reword\|
 autocmd FileType gitrebase vnoremap <buffer> <localleader>f :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:fixup:g<cr>
 autocmd FileType gitrebase vnoremap <buffer> <localleader>x :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:exec:g<cr>
 autocmd FileType gitrebase vnoremap <buffer> <localleader>d :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:drop:g<cr>
+
+" easy motion bindings
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
