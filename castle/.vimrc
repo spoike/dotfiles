@@ -31,6 +31,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jeetsukumaran/vim-buffergator', { 'on': ['BuffergatorOpen', 'BuffergatorToggle'] }
 Plug 'easymotion/vim-easymotion'
 
+if v:version > 700
+  Plug 'yegappan/mru'
+endif
+
 if has("gui_macvim")
   Plug 'Valloric/YouCompleteMe'    "only works on macvim
 endif
