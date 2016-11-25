@@ -273,3 +273,5 @@ map <Leader>k <Plug>(easymotion-k)
 
 " automatically set filetype for json rc files
 au BufRead,BufNewFile .*rc set filetype=json
+au BufRead,BufNewFile .frag set filetype=glsl
+au BufRead,BufNewFile .vert set filetype=glsl
