@@ -184,6 +184,8 @@ function work() {
 # Quick open useful web pages/apps
 alias odd='o http://devdocs.io'
 
+alias src='source $HOME/.zshrc'
+
 # Update Stuff
 if [[ $platform == 'Linux' ]]; then
 elif [[ $platform == 'Darwin' ]]; then
