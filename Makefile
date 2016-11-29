@@ -2,6 +2,10 @@
 help:    ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/:.*##/;/' | column -t -s ";"
 
+.PHONY: update
+update: ## Update dotfiles
+	./update.sh
+
 .PHONY: install
 install: ## Install dependencies
 	./install.sh
@@ -9,9 +13,6 @@ install: ## Install dependencies
 .PHONY: download
 download: ## Fetch the latest
 	git pull
-
-.PHONY: update
-update: download install ## Update dotfiles
 
 .PHONY: merge
 merge:   ## Merge config files from ./mergeables
@@ -24,4 +25,3 @@ atom:    ## Install atom plugins
 .PHONY: aws
 aws:     ## Install AWS specifics
 	./scripts/aws/aws.sh
-
