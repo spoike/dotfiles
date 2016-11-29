@@ -23,6 +23,8 @@
 	# branches
 	br = branch -v			# show branch (verbose)
 	recentbranch = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+	br-merged = branch --list '*/*' --no-color --merged master
+	br-merged-clean = "!git br-merged | while read branch; do git branch -v -D $branch ; done"
 
 	# remote stuff
 	fu = fetch upstream

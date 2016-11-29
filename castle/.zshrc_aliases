@@ -189,3 +189,4 @@ if [[ $platform == 'Linux' ]]; then
 elif [[ $platform == 'Darwin' ]]; then
 	alias update_brew='brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor'
 fi
+alias update_dotfiles='pushd $HOME/dotfiles; ./update.sh; popd'

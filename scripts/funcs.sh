@@ -12,6 +12,10 @@ warn() {
   echo "\e[0;33mWARN!\e[0m\t$1"
 }
 
+pause() {
+  read \?'Press any key to continue or Ctrl+C to exit...'
+}
+
 pipeEditor() {
   TMPFILE=`mktemp /tmp/bootstrap.sh.tmp.XXXXXXXXXX`
   cat > {$TMPFILE}
