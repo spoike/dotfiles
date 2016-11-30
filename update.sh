@@ -13,6 +13,7 @@ elif [ $LOCAL = $BASE ]; then
 	pause
 	git rebase origin master
 	./install.sh
+	source $HOME/.zshrc
 elif [ $REMOTE = $BASE ]; then
 	warn "Need to push. Will attempt to do so..."
 	pause
