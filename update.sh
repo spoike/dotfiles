@@ -19,7 +19,7 @@ elif [ $REMOTE = $BASE ]; then
 	git push
 	exit 0
 else
-	warn "Diverged. You will need to solve the merge conflict if such exists."
+	warn "Local has diverged from remote. You will need to solve the merge conflicts with $UPSTREAM if such exists."
 	info "Here is git status for you:"
 	git status
 	exit 1
@@ -36,12 +36,23 @@ if [[ $OLD_VIMRC != $NEW_VIMRC ]]; then
 	pause
 	vim +PlugUpgrade +PlugUpdate +PlugInstall +qall
 else
-	msg "updating/upgrading vim plugins"
-	vim +PlugUpgrade +PlugUpdate +qall
+	read -q REPLY\?"Would you like to update vim plugins? (y/N) "
+	case "${REPLY}" in
+		y|Y)
+			vim +PlugUpgrade +PlugUpdate +qall
+	esac
+	echo ""
 fi
 if [[ $OLD_GITCONFIG != $NEW_GITCONFIG ]]; then
 	msg ".gitconfig has updated. Prepare to merge."
 	pause
 	make merge
+else
+	read -q REPLY\?"Would you like to review .gitconfig? (y/N) "
+	case "${REPLY}" in
+		y|Y)
+			make merge
+	esac
+	echo ""
 fi
 
