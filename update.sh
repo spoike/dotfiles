@@ -7,8 +7,7 @@ REMOTE=$(git rev-parse "$UPSTREAM")
 BASE=$(git merge-base @ "$UPSTREAM")
 
 if [ $LOCAL = $REMOTE ]; then
-	ok "Up-to-date"
-	exit 0
+	ok "dotfiles repository is up-to-date"
 elif [ $LOCAL = $BASE ]; then
 	msg "Upstream has updated. Will rebase with latest and run install script."
 	pause
@@ -32,13 +31,15 @@ OLD_GITCONFIG=$(git rev-parse HEAD:mergeable/.gitconfig)
 NEW_VIMRC=$(git rev-parse "$UPSTREAM":castle/.vimrc)
 NEW_GITCONFIG=$(git rev-parse "$UPSTREAM":mergeable/.gitconfig)
 
-if [[ $OLD_VIMRC!=$NEW_VIMRC ]]; then
+if [[ $OLD_VIMRC != $NEW_VIMRC ]]; then
 	msg ".vimrc has updated. Will install plugins in vim."
 	pause
-	vim +PlugInstall +qall
+	vim +PlugUpgrade +PlugUpdate +PlugInstall +qall
+else
+	msg "updating/upgrading vim plugins"
+	vim +PlugUpgrade +PlugUpdate +qall
 fi
-vim +PlugUpgrade +PlugUpdate +qall
-if [[ $OLD_GITCONFIG!=$NEW_GITCONFIG ]]; then
+if [[ $OLD_GITCONFIG != $NEW_GITCONFIG ]]; then
 	msg ".gitconfig has updated. Prepare to merge."
 	pause
 	make merge
