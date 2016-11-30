@@ -18,7 +18,6 @@ elif [ $REMOTE = $BASE ]; then
 	warn "Need to push. Will attempt to do so..."
 	pause
 	git push
-	exit 0
 else
 	warn "Local has diverged from remote. You will need to solve the merge conflicts with $UPSTREAM if such exists."
 	info "Here is git status for you:"
@@ -55,5 +54,15 @@ else
 			make merge
 	esac
 	echo ""
+fi
+
+platform=`uname`
+if [[ $platform == 'Darwin' ]]; then
+	read -q REPLY\?"Would you like to update brew? (y/N) "
+	echo ""
+	case "${REPLY}" in
+		y|Y)
+		brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor
+	esac
 fi
 
