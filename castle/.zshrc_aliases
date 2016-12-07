@@ -49,6 +49,24 @@ function latest() {
 		vim $(git_latest_changes $*)
 	fi
 }
+# Git smart checkout. Remembers last branch and lets you quickly switch between
+function gch() {
+	local currentBranch=$(git rev-parse --abbrev-ref HEAD)
+	local previousFile="$(git rev-parse --show-toplevel)/.git/PREVIOUS_HEAD"
+	if [ -n "$1" ]; then
+		echo "$currentBranch" >> $previousFile
+		git checkout "$@"
+	else
+		if [ ! -f "$previousFile" ]; then echo >&2 "ERROR: Missing PREVIOUS_HEAD. Please run gch with 1 argument first."
+		else
+			git checkout "$(cat $previousFile | tail --lines=1)"
+			echo "$currentBranch" >> $previousFile
+		fi
+	fi
+	# truncate the file
+	tail -n10 $previousFile > "$previousFile.TEMP"
+	mv -f "$previousFile"{.TEMP,}
+}
 
 # Docker
 alias dicker='docker'
