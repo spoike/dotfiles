@@ -28,7 +28,6 @@ Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
-Plug 'jeetsukumaran/vim-buffergator', { 'on': ['BuffergatorOpen', 'BuffergatorToggle'] }
 Plug 'dr-chip-vim-scripts/ZoomWin', { 'on': 'ZoomWin' }
 Plug 'easymotion/vim-easymotion'
 
@@ -39,6 +38,10 @@ endif
 if has("gui_macvim")
   Plug 'Valloric/YouCompleteMe'    "only works on macvim
 endif
+
+" Buffer Handling
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'moll/vim-bbye'
 
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -245,6 +248,8 @@ endfunction
 autocmd BufEnter * :call BookmarkMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
+" vim-bbye bindings
+nnoremap <Leader>q :Bdelete<CR>
 
 " Interactive Git Rebase
 function! ReplaceRebaseCommand(rebaseCommand)
