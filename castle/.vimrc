@@ -12,7 +12,7 @@ Plug 'dracula/vim'
 " General Purpose Utilities
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'myusuf3/numbers.vim'
@@ -27,7 +27,6 @@ Plug 'mbbill/undotree'
 Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
-Plug 'ryanoasis/vim-devicons'
 Plug 'dr-chip-vim-scripts/ZoomWin', { 'on': 'ZoomWin' }
 Plug 'easymotion/vim-easymotion'
 
@@ -69,6 +68,7 @@ Plug 'clones/vim-zsh', { 'for': 'zsh' }
 Plug 'freitass/todo.txt-vim', { 'for': 'todo' }
 Plug 'tpope/vim-dotenv'
 
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 syntax on
