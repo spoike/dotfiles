@@ -99,6 +99,9 @@ set fillchars+=vert:│
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "dracula"
 let &t_Co=256
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_c = '%t'
 
 " Map leaders
 let mapleader = "-"
