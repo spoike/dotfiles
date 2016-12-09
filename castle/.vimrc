@@ -301,6 +301,6 @@ let g:webdevicons_conceal_nerdtree_brackets = 0
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 " re-source, fix syntax matching issues (concealing brackets):
-if exists('g:loaded_webdevicons')
-	call webdevicons#refresh()
-endif
+"if exists('g:loaded_webdevicons')
+"	call webdevicons#refresh()
+"endif
