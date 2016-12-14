@@ -32,6 +32,8 @@ Plug 'easymotion/vim-easymotion'
 
 if v:version > 700
   Plug 'yegappan/mru'
+  Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+  Plug 'ludovicchabant/vim-gutentags'
 endif
 
 if has("gui_macvim")
@@ -278,6 +280,9 @@ autocmd FileType gitrebase vnoremap <buffer> <localleader>d :s:^\(pick\|reword\|
 " easy motion bindings
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" tagbar
+nmap <Leader>m :TagbarToggle<cr>
 
 " automatically set filetype for json rc files
 au BufRead,BufNewFile .babelrc set filetype=json
