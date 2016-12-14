@@ -32,8 +32,8 @@ Plug 'easymotion/vim-easymotion'
 
 if v:version > 700
   Plug 'yegappan/mru'
-  Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'majutsushi/tagbar'
+  Plug 'ludovicchabant/vim-gutentags', { 'on': 'TagbarToggle' }
 endif
 
 if has("gui_macvim")
