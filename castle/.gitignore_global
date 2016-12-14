@@ -54,3 +54,7 @@ done.txt
 # yarn lock files #
 ###################
 yarn.lock
+
+# tags files for CTAGS, etc. #
+##############################
+tags
