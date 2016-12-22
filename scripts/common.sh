@@ -86,6 +86,17 @@ else
   ok "powerline fonts"
 fi
 
+if [[ ! -d $stuff/sack ]]; then
+  msg "Missing s(hortcut)-ag/ack. Will attempt to clone and install..."
+  git clone https://github.com/sampson-chen/sack.git $stuff/sack
+  cd $stuff/sack
+  chmod +x install_sack.sh
+  ./install_sack.sh
+  cd $current
+else
+  ok "s(hortcut)-ag/ack"
+fi
+
 if [[ ! -d $stuff/diff-so-fancy ]]; then
   msg "Missing diff-so-fancy. Will attempt to clone and install..."
   git clone https://github.com/so-fancy/diff-so-fancy.git $stuff/diff-so-fancy
@@ -123,3 +134,4 @@ if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
 else
   ok "tmux plugin manager"
 fi
+
