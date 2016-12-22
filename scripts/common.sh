@@ -6,12 +6,12 @@ source ./scripts/funcs.sh
 msg "Setting up platform independent packages"
 
 # Install antigen for zsh
-if [ ! -d $HOME/.antigen ]; then
-  mkdir -p $HOME/.antigen
-  curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.antigen/antigen.zsh && ok antigen
-else
-  ok antigen
-fi
+#if [ ! -d $HOME/.antigen ]; then
+#  mkdir -p $HOME/.antigen
+#  curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.antigen/antigen.zsh && ok antigen
+#else
+#  ok antigen
+#fi
 
 # Install antibody (faster than antigen)
 if [ -d $HOME/.antigen ]; then
