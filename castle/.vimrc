@@ -313,3 +313,9 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 "if exists('g:loaded_webdevicons')
 "	call webdevicons#refresh()
 "endif
+
+" flowtype/vim-flow
+let g:flow#autoclose = 1
+
+" Open file under cursor in a vertical split
+nnoremap <C-W><C-F> <C-W>vgf
