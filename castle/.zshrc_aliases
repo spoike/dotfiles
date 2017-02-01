@@ -153,13 +153,13 @@ function or() {
 
 # project aliases and scripts
 function work_create() {
-	printf "Create workspace scripts? (yN) "
+	f=$1/.workspace.zsh
+	printf "Create workspace scripts at \"$f\"? (yN) "
 	read -rs -k 1 ans
 	printf "${ans}\n"
 	case "${ans}" in
 		y|Y)
-			f=$(pwd -P)/.workspace.zsh
-			echo "alias dump='git fetch --all'" > $(pwd -P)/.workspace.zsh
+			echo "alias dump='git fetch --all'" > $f
 			printf "Created file at $f\n"
 			vim $f
 			return 0
@@ -169,14 +169,14 @@ function work_create() {
 	esac
 }
 function work() {
-	workspace=$(pwd -P)
+	workspace=$(git rev-parse --show-toplevel 2> /dev/null || pwd -P)
 	for f in $workspace/.workspace.*sh; do
 		if [ -e "$f" ]; then
 			printf "Sourcing $f\n"
 			source $f
 		else
-			printf "No workspace scripts available. "
-			work_create
+			printf "No workspace scripts available.\n"
+			work_create $workspace
 		fi
 	done
 }
