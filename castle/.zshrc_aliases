@@ -199,3 +199,8 @@ elif [[ $platform == 'Darwin' ]]; then
 	alias note='open -a Notes'
 fi
 alias update_dotfiles='pushd $HOME/dotfiles; ./update.sh; popd'
+
+# Include z command
+if [ -e "/usr/local/etc/profile.d/z.sh" ]; then
+	source /usr/local/etc/profile.d/z.sh
+fi
