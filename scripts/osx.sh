@@ -37,6 +37,7 @@ else
   packages=()
   [ ! -d "/usr/local/opt/coreutils/libexec" ] && packages+=(coreutils) || ok coreutils
   [ ! -x "$(command -v git)" ] && packages+=(git) || ok git
+  [ -z "$(brew ls --versions git-extras)" ] && packages+=(git-extras) || ok git-extras
   [ ! -x "$(command -v tig)" ] && packages+=(tig) || ok tig
   [ ! -x "$(command -v jq)" ] && packages+=(jq) || ok jq
   [ ! -x "$(command -v wget)" ] && packages+=(wget) || ok wget
