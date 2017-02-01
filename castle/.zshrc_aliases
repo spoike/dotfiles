@@ -134,7 +134,7 @@ if [[ $platform == 'Darwin' ]]; then
 fi
 
 # List available tasks
-function lt() {
+function list_tasks() {
 	if [ -e package.json ]; then npm run; fi
 	if [ -e Gulpfile.js ]; then gulp --tasks; fi
 	if [ -e Gruntfile.js ]; then grunt --help --no-color; fi
