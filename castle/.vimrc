@@ -55,6 +55,7 @@ Plug 'bling/vim-bufferline'
 " General Purpose Syntax Checker
 Plug 'scrooloose/syntastic'
 Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javascript' }
+Plug 'rodrigore/syntastic-local-semistandard.vim', { 'for': 'javascript' }
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 
 " NERDTree
@@ -319,3 +320,18 @@ let g:flow#autoclose = 1
 
 " Open file under cursor in a vertical split
 nnoremap <C-W><C-F> <C-W>vgf
+
+command! Standard :call <SID>standard()
+command! Semistandard :call <SID>semistandard()
+
+function! s:standard()
+  let g:syntastic_javascript_checkers = ['standard']
+  let g:syntastic_javascript_standard_exec = 'standard'
+  SyntasticCheck
+endfunction
+
+function! s:semistandard()
+  let g:syntastic_javascript_checkers = ['standard']
+  let g:syntastic_javascript_standard_exec = 'semistandard'
+  SyntasticCheck
+endfunction
