@@ -8,6 +8,7 @@ msg "Setting up global npm packages"
 packages=()
 [ ! -x "$(command -v git-fire)" ] && packages+=(git-fire) || ok git-fire
 [ ! -x "$(command -v flow)" ] && packages+=(flow-bin) || ok flow
+[ ! -x "$(command -v tmpin)" ] && packages+=(tmpin) || ok tmpin
 if [ ! -z "$packages" ]; then
   warn "Missing packages: ${packages}. Will now attempt to install with npm."
   npm install -g $packages
