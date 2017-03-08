@@ -11,7 +11,7 @@ fi
 # Editors
 
 export EDITOR='vim'
-export VISUAL='nano'
+export VISUAL='vim'
 export PAGER='less'
 
 # Language
