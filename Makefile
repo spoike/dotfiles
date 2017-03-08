@@ -14,10 +14,6 @@ install: ## Install dependencies
 download: ## Fetch the latest
 	git pull
 
-.PHONY: merge
-merge:   ## Merge config files from ./mergeables
-	./scripts/merge_configs.sh
-
 .PHONY: atom
 atom:    ## Install atom plugins
 	./scripts/atom/atom.sh

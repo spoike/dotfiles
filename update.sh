@@ -26,10 +26,8 @@ else
 fi
 
 OLD_VIMRC=$(git rev-parse HEAD:castle/.vimrc)
-OLD_GITCONFIG=$(git rev-parse HEAD:mergeable/.gitconfig)
 
 NEW_VIMRC=$(git rev-parse "$UPSTREAM":castle/.vimrc)
-NEW_GITCONFIG=$(git rev-parse "$UPSTREAM":mergeable/.gitconfig)
 
 if [[ $OLD_VIMRC != $NEW_VIMRC ]]; then
 	msg ".vimrc has updated. Will install plugins in vim."
@@ -40,18 +38,6 @@ else
 	case "${REPLY}" in
 		y|Y)
 			vim +PlugUpgrade +PlugUpdate +qall
-	esac
-	echo ""
-fi
-if [[ $OLD_GITCONFIG != $NEW_GITCONFIG ]]; then
-	msg ".gitconfig has updated. Prepare to merge."
-	pause
-	make merge
-else
-	read -q REPLY\?"Would you like to review .gitconfig? (y/N) "
-	case "${REPLY}" in
-		y|Y)
-			make merge
 	esac
 	echo ""
 fi

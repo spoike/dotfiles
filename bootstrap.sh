@@ -29,35 +29,13 @@ else
   ok ".zshrc_extras"
 fi
 
-msg "Setting up config files (merging)"
-# Merge config files
-mergeFiles() {
-  cd mergeable
-  files=`ls .*~*swp`
-  for file in $files; do
-    if [[ -e $backupDir/$file && -e $HOME/$file ]]; then
-      ok $file
-      continue
-    fi
-    if [ -f $HOME/$file ]; then
-      msg "Backing up and merging $file"
-      cp -v $HOME/$file $backupDir
-      merged=$(diff3 -m $HOME/$file $dir/mergeable/$file $dir/mergeable/$file)
-      if [ ! $? -eq 0 ]; then
-        # merge conflict, edit, and save it in place
-        printf %s "$merged" | EDITOR=vim pipeEditor > $HOME/$file
-      else
-        printf %s "$merged" > $HOME/$file
-      fi
-    else
-      msg "Adding $file"
-      cp -v $dir/mergeable/$file $HOME/$file
-    fi
-    ok $file
-  done
-}
-( mergeFiles )
-
+if [ ! -f $HOME/.local.gitconfig ]; then
+  warn ".local.gitconfig is missing... Creating empty file"
+  touch $HOME/.local.gitconfig
+else
+  ok ".local.gitconfig"
+fi
+#
 # Install platform dependent packages and settings
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then

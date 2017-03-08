@@ -89,6 +89,8 @@
 	# GITHUB PRs (main in upstream)
 	pr = !git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1 && :
 	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+	scrum = log --since='1 day ago' --author='Mikael Brassman' --oneline --no-merges
 [merge]
 	tool = kdiff3
 [push]
@@ -116,3 +118,5 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[include]
+	path = ~/.local.gitconfig
