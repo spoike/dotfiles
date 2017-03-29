@@ -109,8 +109,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_c = '%t'
 
 " Map leaders
-let mapleader = "-"
-let maplocalleader = "--"
+let mapleader = "\<Space>"
+let maplocalleader = "-"
 
 " Linenumbers Config
 nnoremap <C-l> :NumbersToggle<CR>
