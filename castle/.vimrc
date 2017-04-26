@@ -30,6 +30,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mhinz/vim-startify'
 Plug 'dr-chip-vim-scripts/ZoomWin', { 'on': 'ZoomWin' }
 Plug 'easymotion/vim-easymotion'
+Plug 'alvan/vim-closetag'
 
 if v:version > 700
   Plug 'yegappan/mru'
@@ -86,6 +87,9 @@ endif
 
 " Invisible chars
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+" closetag
+let g:closetag_filenames = "*.html,*.htm,*.js,*.jsx"
 
 " Colorscheme
 
