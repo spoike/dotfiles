@@ -33,13 +33,13 @@ Plug 'easymotion/vim-easymotion'
 Plug 'alvan/vim-closetag'
 
 if v:version > 700
-  Plug 'yegappan/mru'
-  Plug 'majutsushi/tagbar'
-  Plug 'ludovicchabant/vim-gutentags', { 'on': 'TagbarToggle' }
+	Plug 'yegappan/mru'
+	Plug 'majutsushi/tagbar'
+	Plug 'ludovicchabant/vim-gutentags', { 'on': 'TagbarToggle' }
 endif
 
 if has("gui_macvim")
-  Plug 'Valloric/YouCompleteMe'    "only works on macvim
+	Plug 'Valloric/YouCompleteMe'    "only works on macvim
 endif
 
 " Buffer Handling
@@ -48,7 +48,7 @@ Plug 'moll/vim-bbye'
 
 " Distraction Free writing
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-  \ | Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+			\ | Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
 " Status Bar Plugins
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
@@ -156,9 +156,9 @@ let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=*/node_modules/*
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
+			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll)$',
+			\ }
 
 " Nerdtree Config
 map <C-n> :NERDTreeToggle<CR>
@@ -185,12 +185,12 @@ let g:vim_markdown_frontmatter=1
 
 " Wildmenu
 if has("wildmenu")
-  set wildignore+=*.a,*.o
-  set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
-  set wildignore+=.DS_Store,.git,.hg,.svn
-  set wildignore+=*~,*.swp,*.tmp
-  set wildmenu
-  set wildmode=list:longest,full
+	set wildignore+=*.a,*.o
+	set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+	set wildignore+=.DS_Store,.git,.hg,.svn
+	set wildignore+=*~,*.swp,*.tmp
+	set wildmenu
+	set wildmode=list:longest,full
 endif
 
 
@@ -221,9 +221,9 @@ map <Leader>s :tabe $MYVIMRC<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
 
 try
-   execute "silent! source " . $MYVIMRC . "." . $USER
+	execute "silent! source " . $MYVIMRC . "." . $USER
 catch
-   " no-op
+	" no-op
 endtry
 
 " MattesGroeger/vim-bookmarks
@@ -265,7 +265,7 @@ nnoremap <Leader>q :Bdelete<CR>
 
 " Interactive Git Rebase
 function! ReplaceRebaseCommand(rebaseCommand)
-  :exe "s-^\(pick<bar>reword<bar>edit<bar>squash<bar>fixup<bar>exec<bar>drop\)\?-" . a:rebaseCommand . "-g<esc>"
+	:exe "s-^\(pick<bar>reword<bar>edit<bar>squash<bar>fixup<bar>exec<bar>drop\)\?-" . a:rebaseCommand . "-g<esc>"
 endfunction
 " normal mode
 autocmd FileType gitrebase nnoremap <buffer> <localleader>p _cwpick<esc>_
@@ -330,13 +330,13 @@ command! Standard :call <SID>standard()
 command! Semistandard :call <SID>semistandard()
 
 function! s:standard()
-  let g:syntastic_javascript_checkers = ['standard']
-  let g:syntastic_javascript_standard_exec = 'standard'
-  SyntasticCheck
+	let g:syntastic_javascript_checkers = ['standard']
+	let g:syntastic_javascript_standard_exec = 'standard'
+	SyntasticCheck
 endfunction
 
 function! s:semistandard()
-  let g:syntastic_javascript_checkers = ['standard']
-  let g:syntastic_javascript_standard_exec = 'semistandard'
-  SyntasticCheck
+	let g:syntastic_javascript_checkers = ['standard']
+	let g:syntastic_javascript_standard_exec = 'semistandard'
+	SyntasticCheck
 endfunction
