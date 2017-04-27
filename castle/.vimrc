@@ -39,7 +39,7 @@ if v:version > 700
 endif
 
 if has("gui_macvim")
-	Plug 'Valloric/YouCompleteMe'    "only works on macvim
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }    "only works on macvim
 endif
 
 " Buffer Handling
