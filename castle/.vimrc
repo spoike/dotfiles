@@ -93,12 +93,13 @@ let g:closetag_filenames = "*.html,*.htm,*.js,*.jsx"
 
 " Colorscheme
 
+set background=dark
 "colorscheme peachpuff
 colorscheme dracula
+highlight Normal ctermbg=NONE
 "colorscheme wombat256i
 "colorscheme miko
 "colorscheme seoul256
-"set background=dark
 
 " Highlight for YCM
 highlight Pmenu ctermbg=56 ctermfg=15
