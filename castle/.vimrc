@@ -31,6 +31,7 @@ Plug 'mhinz/vim-startify'
 Plug 'dr-chip-vim-scripts/ZoomWin', { 'on': 'ZoomWin' }
 Plug 'easymotion/vim-easymotion'
 Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
 
 if v:version > 700
 	Plug 'yegappan/mru'
