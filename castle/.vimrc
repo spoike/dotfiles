@@ -96,7 +96,9 @@ let g:closetag_filenames = "*.html,*.htm,*.js,*.jsx"
 set background=dark
 "colorscheme peachpuff
 colorscheme dracula
-highlight Normal ctermbg=NONE
+" patch dracula scheme
+highlight Normal ctermbg=NONE ctermfg=NONE
+autocmd BufEnter * :highlight Normal ctermbg=NONE ctermfg=NONE
 "colorscheme wombat256i
 "colorscheme miko
 "colorscheme seoul256
