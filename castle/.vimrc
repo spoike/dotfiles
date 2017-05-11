@@ -32,6 +32,7 @@ Plug 'dr-chip-vim-scripts/ZoomWin', { 'on': 'ZoomWin' }
 Plug 'easymotion/vim-easymotion'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
+Plug 'gioele/vim-autoswap'
 
 if v:version > 700
 	Plug 'yegappan/mru'
@@ -108,6 +109,9 @@ autocmd BufEnter * :highlight Normal ctermbg=NONE ctermfg=NONE
 highlight Pmenu ctermbg=56 ctermfg=15
 " ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 highlight PmenuSel ctermbg=165 ctermfg=15
+
+" autoswap - change to the tmux pane
+let g:autoswap_detect_tmux = 1
 
 " Fix vertical split separator
 set fillchars+=vert:│
