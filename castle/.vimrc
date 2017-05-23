@@ -277,9 +277,6 @@ autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 nnoremap <Leader>q :Bdelete<CR>
 
 " Interactive Git Rebase
-function! ReplaceRebaseCommand(rebaseCommand)
-	:exe "s-^\(pick<bar>reword<bar>edit<bar>squash<bar>fixup<bar>exec<bar>drop\)\?-" . a:rebaseCommand . "-g<esc>"
-endfunction
 " normal mode
 autocmd FileType gitrebase nnoremap <buffer> <localleader>p _cwpick<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>r _cwreword<esc>_
