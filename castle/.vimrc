@@ -286,13 +286,13 @@ autocmd FileType gitrebase nnoremap <buffer> <localleader>f _cwfixup<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>x _cwexec<esc>_
 autocmd FileType gitrebase nnoremap <buffer> <localleader>d _cwdrop<esc>_
 " visual mode
-autocmd FileType gitrebase vnoremap <buffer> <localleader>p :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:pick:g<cr>
-autocmd FileType gitrebase vnoremap <buffer> <localleader>r :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:reword:g<cr>
-autocmd FileType gitrebase vnoremap <buffer> <localleader>e :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:edit:g<cr>
-autocmd FileType gitrebase vnoremap <buffer> <localleader>s :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:squash:g<cr>
-autocmd FileType gitrebase vnoremap <buffer> <localleader>f :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:fixup:g<cr>
-autocmd FileType gitrebase vnoremap <buffer> <localleader>x :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:exec:g<cr>
-autocmd FileType gitrebase vnoremap <buffer> <localleader>d :s:^\(pick\|reword\|edit\|squash\|fixup\|exec\|drop\)\=:drop:g<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>p :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/pick/<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>r :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/reword/<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>e :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/edit/<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>s :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/squash/<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>f :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/fixup/<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>x :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/exec/<cr>
+autocmd FileType gitrebase vnoremap <buffer> <localleader>d :s/\v^(pick\|reword\|edit\|squash\|fixup\|exec\|drop)/drop/<cr>
 
 " easy motion bindings
 map <Leader>j <Plug>(easymotion-j)
