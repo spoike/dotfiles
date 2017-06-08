@@ -192,6 +192,15 @@ let g:netrw_altv=1         " open splits to the right
 let g:netrw_liststyle=3    " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
+" Generic folding
+set foldmethod=syntax
+set foldlevelstart=1
+
+let javaScript_fold=1       " JavaScript
+let sh_fold_enabled=1       " sh
+let vimsyn_folding='af'     " Vim script
+let xml_syntax_folding=1    " XML
+
 " Markdown folding
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
