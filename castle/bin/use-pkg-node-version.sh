@@ -4,6 +4,12 @@
 # Dependencies: nvm, jq
 # Usage: Alias this by sourcing with ".", e.g. alias nnn='. ~/bin/use-pkg-node-version.sh'
 
+if [ -e .nvmrc ]; then
+    echo "Found .nvmrc file"
+    nvm install && nvm use
+    return 1
+fi
+
 if [ ! -e package.json ]; then
     echo "Missing package.json file"
     return 1
