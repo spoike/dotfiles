@@ -194,7 +194,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " Generic folding
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=999
 
 let javaScript_fold=1       " JavaScript
 let sh_fold_enabled=1       " sh
