@@ -139,6 +139,9 @@ nnoremap <leader>aa :Ack!<space>
 nnoremap <leader>aw :Ack! <cword><cr>
 xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
 
+" Buffergator
+nnoremap <localleader>b :BuffergatorToggle<CR>
+
 " gp - select the pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
