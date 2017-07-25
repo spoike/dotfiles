@@ -54,7 +54,6 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " Status Bar Plugins
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'bling/vim-bufferline'
 
 " General Purpose Syntax Checker
 Plug 'scrooloose/syntastic'
@@ -123,7 +122,6 @@ let g:airline_theme = "dracula"
 let &t_Co=256
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_section_b = '%{getcwd()}'
-let g:airline_section_c = '%t'
 "let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%#__restore__# :%3v'
 
