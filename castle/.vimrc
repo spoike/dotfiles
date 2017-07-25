@@ -124,6 +124,8 @@ let &t_Co=256
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
+"let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
+let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%#__restore__# :%3v'
 
 " Map leaders
 let mapleader = "\<Space>"
