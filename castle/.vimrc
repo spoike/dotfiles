@@ -96,9 +96,6 @@ let g:closetag_filenames = "*.html,*.htm,*.js,*.jsx"
 
 set background=dark
 colorscheme dracula
-" patch dracula scheme
-highlight Normal ctermbg=NONE ctermfg=NONE
-autocmd BufEnter * :highlight Normal ctermbg=NONE ctermfg=NONE
 
 " Highlight for YCM
 highlight Pmenu ctermbg=56 ctermfg=15
