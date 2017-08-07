@@ -46,7 +46,6 @@ if has("gui_macvim")
 endif
 
 " Buffer Handling
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'moll/vim-bbye'
 
 " Distraction Free writing
@@ -136,9 +135,6 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 nnoremap <leader>aa :Ack!<space>
 nnoremap <leader>aw :Ack! <cword><cr>
 xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
-
-" Buffergator
-nnoremap <localleader>b :BuffergatorToggle<CR>
 
 " gp - select the pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
