@@ -100,7 +100,7 @@ colorscheme dracula
 " Highlight for YCM
 highlight Pmenu ctermbg=56 ctermfg=15
 " ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
-highlight PmenuSel ctermbg=165 ctermfg=15
+highlight PmenuSel term=standout ctermbg=165 ctermfg=15
 
 " autoswap - change to the tmux pane
 let g:autoswap_detect_tmux = 1
