@@ -1,4 +1,5 @@
 set nocompatible
+set hidden " for ctrl-space
 filetype plugin on
 set encoding=utf8
 
@@ -13,7 +14,7 @@ Plug 'dracula/vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'myusuf3/numbers.vim'
@@ -113,10 +114,14 @@ set fillchars+=vert:│
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "dracula"
 let &t_Co=256
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 "let g:airline_section_b = '%{getcwd()}'
 "let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%#__restore__# :%3v'
+
+" for vim-ctrlspace
+let g:airline_exclude_preview = 1
+let g:CtrlSpaceUseMouseAndArrowsInTerm = 1
 
 " Map leaders
 let mapleader = "\<Space>"
@@ -159,15 +164,16 @@ nnoremap <C-a> ggVG
 " vim-jsx Config
 let g:jsx_ext_required = 0
 
-" CtrlP Config
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" wildignore config (was part of CtrlP previously)
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=*/node_modules/*
-let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-			\ 'file': '\v\.(exe|so|dll)$',
-			\ }
+
+" vim-ctrlspace config
+set showtabline=0
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
+nnoremap <silent><C-p> :CtrlSpace O<CR>
 
 " Nerdtree Config
 map <C-n> :NERDTreeToggle<CR>
