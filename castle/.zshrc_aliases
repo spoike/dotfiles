@@ -110,8 +110,11 @@ alias nyan='~/Projects/stuff/nyancat/src/nyancat'
 alias lsd='nyan'
 alias fisk='~/Projects/stuff/nyan-dopefish/src/nyancat'
 
-# Misc Shortcuts
+# tmux Stuff
 alias mux='tmuxifier'
+alias t='tmux a || tmux new'
+
+# Misc Shortcuts
 alias td='cd $(mktemp -d)'
 alias week='/bin/date +%V'
 alias pp='python /opt/spotify-notify/spotify-notify.py -a playPause'
