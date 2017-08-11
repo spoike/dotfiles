@@ -64,30 +64,6 @@ function s3ls() {
 	aws s3 ls s3://$1
 }
 
-# Find file
-function ff() {
-	find $(pwd) -name "*$1*" | \
-		grep -v -E /\(node_modules\|bower_components\|.git\)
-}
-
-# Find in file
-function f()
-{
-	grep --color=always \
-		-Rnw -i "$1" \
-		--include=**\*.{js,json,sh,yml} \
-		--exclude-dir={node_modules,bower_components} \
-		$(pwd) | \
-		sed -e "s/\t//g" | \
-		sed "s/:/:\t /2" | \
-		column -ts $'\t'
-}
-function fl()
-{
-	f $1 | \
-		less -S
-}
-
 # Mongo
 alias mup='sudo service mongod start'
 alias mdown='sudo service mongod stop'
@@ -183,6 +159,10 @@ function work() {
 		fi
 	done
 }
+
+
+command -v fzf >/dev/null 2>&1 && alias f='vim $(fzf)'
+command -v ag >/dev/null 2>&1 && alias ff='ag'
 
 # Quick open useful web pages/apps
 alias odd='o http://devdocs.io'
