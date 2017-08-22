@@ -57,8 +57,7 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 " General Purpose Syntax Checker
 Plug 'scrooloose/syntastic'
-Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javascript' }
-Plug 'rodrigore/syntastic-local-semistandard.vim', { 'for': 'javascript' }
+Plug 'spoike/syntastic-local-eslint.vim', { 'for': 'javascript' }
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 
 " NERDTree
