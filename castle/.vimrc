@@ -342,6 +342,9 @@ let g:flow#autoclose = 1
 " Open file under cursor in a vertical split
 nnoremap <C-W><C-F> <C-W>vgf
 
+" Add fzf to runtime path
+" set rtp+=/usr/local/opt/fzf
+
 command! Standard :call <SID>standard()
 command! Semistandard :call <SID>semistandard()
 
