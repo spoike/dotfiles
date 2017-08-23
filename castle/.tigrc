@@ -1,0 +1,26 @@
+# Set reference formats for branch and tags
+set reference-format = (branch) <tag>
+
+# Reload ~/.tigrc
+bind generic S :source ~/.tigrc
+
+# Quickly jump to next diff chunk in stage
+bind stage <Enter> :/^@@
+
+# Move diff view with arrow keys
+bind diff <Up> move-up
+bind diff <Down> move-down
+
+# Stage single line
+bind stage 1 stage-update-line
+
+# Patch the file under cursor
+bind status P !git add --patch %(file)
+
+# Add selected file to gitignore and open vim for additional changes
+bind status <Ctrl-r> !sh -c "echo %(file) >> .gitignore && vi .gitignore"
+
+# Delete a file
+bind status D !@?rm %(file)
+
+
