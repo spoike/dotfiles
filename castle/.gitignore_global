@@ -58,3 +58,6 @@ yarn.lock
 # tags files for CTAGS, etc. #
 ##############################
 tags
+
+# Visual Studio Code
+jsconfig.json
