@@ -188,6 +188,18 @@ if command -v fzf &> /dev/null; then
 			[ -f "${line/\~/$HOME}" ] && echo "$line"
 		done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
 	}
+
+	# fuzzy grep open via ag
+	vg() {
+		local file
+
+		file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
+
+		if [[ -n $file  ]]
+		then
+			vim $file
+		fi
+	}
 fi
 command -v ag >/dev/null 2>&1 && alias ff='ag'
 
