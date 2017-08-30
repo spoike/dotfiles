@@ -42,6 +42,7 @@ else
   [ ! -x "$(command -v tig)" ] && packages+=(tig) || ok tig
   [ ! -x "$(command -v jq)" ] && packages+=(jq) || ok jq
   [ ! -x "$(command -v wget)" ] && packages+=(wget) || ok wget
+  [ ! -x "$(command -v fzf)" ] && packages+=(fzf) || ok fzf
   [ ! -x "$(command -v tmux)" ] && packages+=(tmux) || ok tmux
   [ ! -x "$(command -v task)" ] && packages+=(task) || ok task
   [ ! -x "$(command -v ack)" ] && packages+=(ack) || ok ack
