@@ -25,6 +25,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
+Plug '/usr/local/opt/fzf'| Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'schickling/vim-bufonly'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -117,10 +118,6 @@ let g:airline#extensions#tabline#enabled = 0
 "let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%#__restore__# :%3v'
 
-" for vim-ctrlspace
-let g:airline_exclude_preview = 1
-let g:CtrlSpaceUseMouseAndArrowsInTerm = 1
-
 " Map leaders
 let mapleader = "\<Space>"
 let maplocalleader = "-"
@@ -164,11 +161,16 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=*/node_modules/*
 
 " vim-ctrlspace config
+let g:airline_exclude_preview = 1
+let g:CtrlSpaceUseMouseAndArrowsInTerm = 1
 set showtabline=0
 if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
-nnoremap <silent><C-p> :CtrlSpace O<CR>
+"nnoremap <silent><C-p> :CtrlSpace O<CR>
+
+" fzf.vim config
+nnoremap <silent><C-p> :GFiles<CR>
 
 " Nerdtree Config
 map <C-n> :NERDTreeToggle<CR>
@@ -343,7 +345,7 @@ let g:flow#autoclose = 1
 nnoremap <C-W><C-F> <C-W>vgf
 
 " Add fzf to runtime path
-" set rtp+=/usr/local/opt/fzf
+"set rtp+=/usr/local/opt/fzf
 
 command! Standard :call <SID>standard()
 command! Semistandard :call <SID>semistandard()
