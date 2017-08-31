@@ -36,11 +36,6 @@
 ehthumbs.db
 Thumbs.db
 
-# vim #
-#######
-*.swp
-.vim-bookmarks
-
 # todo.txt files #
 ##################
 todo.txt
@@ -61,3 +56,21 @@ tags
 
 # Visual Studio Code
 jsconfig.json
+
+# vim #
+#######
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+# vim-bookmarks plugin
+.vim-bookmarks
+
