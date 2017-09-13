@@ -2,6 +2,10 @@
 
 platform=`uname` # for selecting aliases for a specific platform
 
+# Quick Aliases
+alias c='clear'
+alias q='quit'
+
 # NodeJS
 alias nnn='. ~/bin/use-pkg-node-version.sh'
 alias nsn='. ~/bin/set-pkg-node-version.sh'
