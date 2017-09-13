@@ -248,24 +248,27 @@ catch
 endtry
 
 " MattesGroeger/vim-bookmarks
-highlight BookmarkSign ctermbg=NONE ctermfg=160
+"highlight BookmarkSign ctermbg=NONE ctermfg=160
+"highlight BookmarkLine ctermbg=22 ctermfg=NONE
 let g:bookmark_sign = '🔖'
-highlight BookmarkLine ctermbg=22 ctermfg=NONE
-let g:bookmark_highlight_lines = 1
+let g:bookmark_annotation_sign = '📝'
+"let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
+let g:bookmark_auto_close = 1
+let g:bookmark_center = 1
 " unbind vim-bookmark key mappings when NERDtree is active
 let g:bookmark_no_default_key_mappings = 1
 function! BookmarkMapKeys()
-	nmap mm :BookmarkToggle<CR>
-	nmap mi :BookmarkAnnotate<CR>
-	nmap mn :BookmarkNext<CR>
-	nmap mp :BookmarkPrev<CR>
-	nmap ma :BookmarkShowAll<CR>
-	nmap mc :BookmarkClear<CR>
-	nmap mx :BookmarkClearAll<CR>
-	nmap mkk :BookmarkMoveUp
-	nmap mjj :BookmarkMoveDown
+	nmap mm <Plug>BookmarkToggle
+	nmap mi <Plug>BookmarkAnnotate
+	nmap mn <Plug>BookmarkNext
+	nmap mp <Plug>BookmarkPrev
+	nmap ma <Plug>BookmarkShowAll
+	nmap mc <Plug>BookmarkClear
+	nmap mx <Plug>BookmarkClearAll
+	nmap mkk <Plug>BookmarkMoveUp
+	nmap mjj <Plug>BookmarkMoveDown
 endfunction
 function! BookmarkUnmapKeys()
 	unmap mm
