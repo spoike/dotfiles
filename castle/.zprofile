@@ -14,6 +14,13 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+# vim using macvim
+mvim --version > /dev/null 2>&1
+MACVIM_INSTALLED=$?
+if [ $MACVIM_INSTALLED -eq 0 ]; then
+  alias vim="mvim -v"
+fi
+
 # Language
 
 if [[ -z "$LANG" ]]; then
