@@ -85,10 +85,16 @@ elif [[ $platform == 'Darwin' ]]; then
 fi
 
 # Fun Stuff
-alias fuck='sudo $(fc -ln -1)' # also achievable with `sudo !!`
 alias nyan='~/Projects/stuff/nyancat/src/nyancat'
 alias lsd='nyan'
 alias fisk='~/Projects/stuff/nyan-dopefish/src/nyancat'
+if [ -x "$(command -v thefuck)" ]; then
+	eval $(thefuck --alias)
+else
+	alias fuck='sudo $(fc -ln -1)' # also achievable with `sudo !!`
+fi
+alias fu='fuck'
+alias dafuq='fuck'
 
 # tmux Stuff
 alias mux='tmuxifier'
