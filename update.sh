@@ -52,3 +52,19 @@ if [[ $platform == 'Darwin' ]]; then
 	esac
 fi
 
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+	read -q REPLY\?"Would you like to update zprezto? (y/N) "
+	echo ""
+	case "${REPLY}" in
+		y|Y)
+		(source ~/.zprezto/init.zsh && zprezto-update)
+	esac
+	read -q REPLY\?"Would you like to update zprezto plugins? (y/N) "
+	echo ""
+	case "${REPLY}" in
+		y|Y)
+		pushd ~/.zprezto
+		git submodule update --init --recursive
+		popd
+	esac
+fi
