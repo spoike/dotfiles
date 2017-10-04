@@ -22,7 +22,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ## Quick reload of completion script
 reload_cmpl(){unfunction $1 && autoload -U $1;}
 
-[ -e "${HOME}/.zshrc_aliases" ] && source "${HOME}/.zshrc_aliases"
 [ -e "${HOME}/.zshrc_profile" ] && source "${HOME}/.zshrc_profile"
+[ -e "${HOME}/.zshrc_aliases" ] && source "${HOME}/.zshrc_aliases"
 [ -e "${HOME}/.zshrc_extras" ] && source "${HOME}/.zshrc_extras"
 
