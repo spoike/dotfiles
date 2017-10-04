@@ -36,3 +36,6 @@ DISABLE_AUTO_TITLE=true
 # tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+
+# fzf (Fuzzy Finder)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

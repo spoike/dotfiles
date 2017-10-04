@@ -177,7 +177,7 @@ if command -v fzf &> /dev/null; then
 	alias f='vim $(fzf)'
 
 	# z with fzf
-	unalias z
+	#unalias z
 	z() {
 		if [[ -z "$*" ]]; then
 			cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
