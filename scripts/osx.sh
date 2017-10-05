@@ -56,6 +56,18 @@ else
     brew update -v
     brew install $packages
   fi
+
+  casklist=$(brew cask list)
+  caskpackages=()
+  for c in "${(@f)"$(<./scripts/casks)"}"; do
+    [[ ! $casklist == *$c* ]] && caskpackages+=$c || ok $c
+  done
+  warn "$caskpackages"
+  if [[ ! -z $caskpackages ]]; then
+    warn "Missing casks: ${caskpackages}. Will now attempt to install with brew cask."
+    brew cask install $caskpackages
+  fi
+
 fi
 
 stuff=$HOME/Projects/stuff
