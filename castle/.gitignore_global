@@ -41,6 +41,13 @@ Thumbs.db
 todo.txt
 done.txt
 
+# temporary project files #
+###########################
+*todo*.txt
+*todo*.md
+*todo*.sh
+*helper
+
 # workspace/project helper aliases and scripts #
 ################################################
 .workspace.zsh
