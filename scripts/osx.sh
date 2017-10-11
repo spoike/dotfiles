@@ -47,6 +47,7 @@ else
   [ ! -x "$(command -v task)" ] && packages+=(task) || ok task
   [ ! -x "$(command -v ack)" ] && packages+=(ack) || ok ack
   [ ! -x "$(command -v ag)" ] && packages+=(the_silver_searcher) || ok ag
+  [ ! -x "$(command -v z)" ] && packages+=(z) || ok z
   [ ! -x "$(command -v peco)" ] && packages+=(peco) || ok peco
   [ ! -x "$(command -v thefuck)" ] && packages+=(thefuck) || ok thefuck
   [ ! -x "$(command -v icalBuddy)" ] && packages+=(ical-buddy) || ok icalBuddy
