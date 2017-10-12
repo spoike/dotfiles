@@ -34,39 +34,36 @@ else
     ok "brew cask"
   fi
 
-  packages=()
-  [ ! -d "/usr/local/opt/coreutils/libexec" ] && packages+=(coreutils) || ok coreutils
-  [ ! -x "$(command -v git)" ] && packages+=(git) || ok git
-  [ -z "$(brew ls --versions git-extras)" ] && packages+=(git-extras) || ok git-extras
-  [ -z "$(brew ls --versions z)" ] && packages+=(z) || ok z
-  [ ! -x "$(command -v tig)" ] && packages+=(tig) || ok tig
-  [ ! -x "$(command -v jq)" ] && packages+=(jq) || ok jq
-  [ ! -x "$(command -v wget)" ] && packages+=(wget) || ok wget
-  [ ! -x "$(command -v fzf)" ] && packages+=(fzf) || ok fzf
-  [ ! -x "$(command -v tmux)" ] && packages+=(tmux) || ok tmux
-  [ ! -x "$(command -v task)" ] && packages+=(task) || ok task
-  [ ! -x "$(command -v ack)" ] && packages+=(ack) || ok ack
-  [ ! -x "$(command -v ag)" ] && packages+=(the_silver_searcher) || ok ag
-  [ ! -x "$(command -v z)" ] && packages+=(z) || ok z
-  [ ! -x "$(command -v peco)" ] && packages+=(peco) || ok peco
-  [ ! -x "$(command -v thefuck)" ] && packages+=(thefuck) || ok thefuck
-  [ ! -x "$(command -v icalBuddy)" ] && packages+=(ical-buddy) || ok icalBuddy
-  [ ! -x "$(command -v reattach-to-user-namespace)" ] && packages+=(reattach-to-user-namespace) || ok reattach-to-user-namespace
-  if [[ ! -z $packages ]]; then
-    warn "Missing packages: ${packages}. Will now attempt to install with brew."
-    brew update -v
-    brew install $packages
+  list=$(brew tap)
+  missing=()
+  for t in "${(@f)"$(<./scripts/brew.taps)"}"; do
+    [[ ! $list == *$t* ]] && missing+=$t || ok "brew tap:  $t"
+  done
+  if [[ ! -z $missing ]]; then
+    warn "Missing taps: ${missing}. Will now attempt to add them to brew."
+    for t in $missing; do
+      brew tap $t
+    done
   fi
 
-  casklist=$(brew cask list)
-  caskpackages=()
-  for c in "${(@f)"$(<./scripts/casks)"}"; do
-    [[ ! $casklist == *$c* ]] && caskpackages+=$c || ok $c
+  list=$(brew list)
+  missing=()
+  for c in "${(@f)"$(<./scripts/brew.packages)"}"; do
+    [[ ! $list == *$c* ]] && missing+=$c || ok "brew pkg:  $c"
   done
-  warn "$caskpackages"
-  if [[ ! -z $caskpackages ]]; then
-    warn "Missing casks: ${caskpackages}. Will now attempt to install with brew cask."
-    brew cask install $caskpackages
+  if [[ ! -z $missing ]]; then
+    warn "Missing brew packages: ${missing}. Will now attempt to install with brew."
+    brew cask install $missing
+  fi
+
+  list=$(brew cask list)
+  missing=()
+  for c in "${(@f)"$(<./scripts/cask.packages)"}"; do
+    [[ ! $list == *$c* ]] && missing+=$c || ok "brew cask: $c"
+  done
+  if [[ ! -z $missing ]]; then
+    warn "Missing casks: ${missing}. Will now attempt to install with brew cask."
+    brew cask install $missing
   fi
 
 fi

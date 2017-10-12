@@ -1,0 +1,16 @@
+reattach-to-user-namespace
+coreutils
+git
+git-extras
+z
+tig
+jq
+wget
+fzf
+tmux
+task
+ack
+the_silver_searcher
+peco
+thefuck
+ical-buddy
