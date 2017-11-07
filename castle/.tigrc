@@ -23,4 +23,11 @@ bind status <Ctrl-r> !sh -c "echo %(file) >> .gitignore && vi .gitignore"
 # Delete a file
 bind status D !@?rm %(file)
 
+# Add/edit notes for the current commit used during a review
+bind generic T !git notes edit %(commit)
 
+# Interactive add for staging a file
+bind generic I !git add -i %(file)
+
+# Copy commitID to clipboard
+bind generic 9 !@sh -c "echo %(commit) | pbcopy"
