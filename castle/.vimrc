@@ -57,9 +57,13 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 " General Purpose Syntax Checker
-Plug 'scrooloose/syntastic'
-Plug 'spoike/syntastic-local-eslint.vim', { 'for': 'javascript' }
-Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+" Plug 'scrooloose/syntastic'
+" Plug 'spoike/syntastic-local-eslint.vim', { 'for': 'javascript' }
+" Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+Plug 'w0rp/ale'
+nmap <silent> <C-h> :lwindow<cr>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -350,17 +354,17 @@ nnoremap <C-W><C-F> <C-W>vgf
 " Add fzf to runtime path
 "set rtp+=/usr/local/opt/fzf
 
-command! Standard :call <SID>standard()
-command! Semistandard :call <SID>semistandard()
-
-function! s:standard()
-	let g:syntastic_javascript_checkers = ['standard']
-	let g:syntastic_javascript_standard_exec = 'standard'
-	SyntasticCheck
-endfunction
-
-function! s:semistandard()
-	let g:syntastic_javascript_checkers = ['standard']
-	let g:syntastic_javascript_standard_exec = 'semistandard'
-	SyntasticCheck
-endfunction
+"command! Standard :call <SID>standard()
+"command! Semistandard :call <SID>semistandard()
+"
+"function! s:standard()
+"	let g:syntastic_javascript_checkers = ['standard']
+"	let g:syntastic_javascript_standard_exec = 'standard'
+"	SyntasticCheck
+"endfunction
+"
+"function! s:semistandard()
+"	let g:syntastic_javascript_checkers = ['standard']
+"	let g:syntastic_javascript_standard_exec = 'semistandard'
+"	SyntasticCheck
+"endfunction
