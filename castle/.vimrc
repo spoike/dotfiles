@@ -169,7 +169,7 @@ let g:airline_exclude_preview = 1
 let g:CtrlSpaceUseMouseAndArrowsInTerm = 1
 set showtabline=0
 if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+    let g:CtrlSpaceGlobCommand = 'ag --vimgrep -l --nocolor -g ""'
 endif
 "nnoremap <silent><C-p> :CtrlSpace O<CR>
 
