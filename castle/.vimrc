@@ -71,6 +71,13 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFind
 " Search Plugin
 Plug 'mileszs/ack.vim' | Plug 'tpope/vim-dispatch'
 let g:ack_use_dispatch = 1
+" Bindings for ack.vim
+nnoremap <leader>aa :Ack!<space>
+nnoremap <leader>aw :Ack! <cword><cr>
+xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag --vimgrep -l --nocolor -g ""'
+endif
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -132,11 +139,6 @@ nnoremap <C-l> :NumbersToggle<CR>
 setl number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-" Bindings for ack.vim
-nnoremap <leader>aa :Ack!<space>
-nnoremap <leader>aw :Ack! <cword><cr>
-xnoremap <leader>a y:Ack <C-r>=fnameescape(@")<CR><CR>
-
 " gp - select the pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
@@ -169,10 +171,6 @@ set wildignore+=*/node_modules/*
 let g:airline_exclude_preview = 1
 let g:CtrlSpaceUseMouseAndArrowsInTerm = 1
 set showtabline=0
-if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag --vimgrep -l --nocolor -g ""'
-endif
-"nnoremap <silent><C-p> :CtrlSpace O<CR>
 
 " fzf.vim config
 nnoremap <silent><C-p> :GFiles<CR>
