@@ -69,7 +69,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Search Plugin
-Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim' | Plug 'tpope/vim-dispatch'
+let g:ack_use_dispatch = 1
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
