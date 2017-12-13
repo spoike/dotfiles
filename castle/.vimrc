@@ -1,6 +1,6 @@
 set nocompatible
 set hidden " for ctrl-space
-filetype plugin on
+filetype plugin indent on
 set encoding=utf8
 
 call plug#begin('~/.vim/plugged')
