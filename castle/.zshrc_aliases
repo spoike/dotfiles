@@ -252,3 +252,7 @@ function up {
 	fi
 }
 
+function weather {
+  curl wttr.in/${1:-kävlinge}
+}
+
