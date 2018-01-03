@@ -3,6 +3,10 @@ set hidden " for ctrl-space
 filetype plugin indent on
 set encoding=utf8
 
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 call plug#begin('~/.vim/plugged')
 
 " Themes
