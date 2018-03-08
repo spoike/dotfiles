@@ -68,6 +68,7 @@ Plug 'w0rp/ale'
 nmap <silent> <C-h> :lwindow<cr>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:airline#extensions#ale#enabled = 1
 
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
