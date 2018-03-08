@@ -18,7 +18,8 @@ if [ -d $HOME/.antigen ]; then
   echo "rm -rf $HOME/.antigen"
 fi
 if [ ! -x "$(command -v antibody)" ]; then
-  curl -s https://raw.githubusercontent.com/getantibody/installer/master/install | bash -s
+  curl -sL git.io/antibody | bash -s
+  # curl -s https://raw.githubusercontent.com/getantibody/installer/master/install | bash -s
 else
   ok antibody
 fi
