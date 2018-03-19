@@ -372,3 +372,5 @@ nnoremap <C-W><C-F> <C-W>vgf
 "	let g:syntastic_javascript_standard_exec = 'semistandard'
 "	SyntasticCheck
 "endfunction
+
+set exrc

@@ -80,4 +80,5 @@ Session.vim
 tags
 # vim-bookmarks plugin
 .vim-bookmarks
-
+# local vimrc files
+.vimrc
