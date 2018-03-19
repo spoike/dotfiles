@@ -135,10 +135,17 @@ function ow() {
 	o http://localhost:$1
 }
 
+function get_remote_repo_url() {
+  git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1 | sed 's/git@//g' | sed 's/(https?)?:/\//'
+}
+
 # Open Remote Repo (using o alias)
 function or() {
-	remotes=($(git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1 | sed 's/git@//g' | sed 's/:/\//'))
-	o http://${remotes[1]}
+  o ${$(get_remote_repo_url)[1]}
+}
+
+function orp() {
+  o ${$(get_remote_repo_url)[1]}/pulls
 }
 
 # project aliases and scripts
