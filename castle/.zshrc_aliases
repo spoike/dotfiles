@@ -7,6 +7,7 @@ alias c='clear'
 alias q='quit'
 
 # NodeJS
+alias nu='nvm use'
 alias nnn='. ~/bin/use-pkg-node-version.sh'
 alias nsn='. ~/bin/set-pkg-node-version.sh'
 alias n26='nvm use 0.10.26'
