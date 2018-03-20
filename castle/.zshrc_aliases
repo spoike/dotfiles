@@ -148,6 +148,15 @@ function orp() {
   o ${$(get_remote_repo_url)[1]}/pulls
 }
 
+# change directory to git top level
+function gcd() {
+  topdir=$(git rev-parse --show-toplevel)
+  if [[ $? -ne 0 ]]; then
+    return 1
+  fi
+  cd "${topdir}/${1}"
+}
+
 # project aliases and scripts
 function work_create() {
 	f=$1/.workspace.zsh
