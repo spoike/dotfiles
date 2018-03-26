@@ -148,6 +148,20 @@ function orp() {
   o ${$(get_remote_repo_url)[1]}/pulls
 }
 
+function get_project_url() {
+  local url
+  if [[ $(wc -l < .url) -ge 2 ]]; then
+    url=$(peco .url)
+  else
+    url=$(cat .url)
+  fi
+  print $url
+}
+
+function url() {
+  o $(get_project_url)
+}
+
 # change directory to git top level
 function gcd() {
   topdir=$(git rev-parse --show-toplevel)

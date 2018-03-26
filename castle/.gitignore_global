@@ -82,3 +82,7 @@ tags
 .vim-bookmarks
 # local vimrc files
 .vimrc
+
+# .url file - open project url
+.url
+
