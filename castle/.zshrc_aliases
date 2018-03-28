@@ -136,7 +136,10 @@ function ow() {
 }
 
 function get_remote_repo_url() {
-  git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1 | sed 's/git@//g' | sed 's/(https?)?:/\//'
+  git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1 | \
+    sed 's/git@/https:\/\//g' | sed -E 's/(https?:\/\/.*):/\1\//g' | \
+    grep -Ev "^\s*$" | \
+    sort | uniq
 }
 
 # Open Remote Repo (using o alias)
@@ -149,17 +152,18 @@ function orp() {
 }
 
 function get_project_url() {
-  local url
-  if [[ $(wc -l < .url) -ge 2 ]]; then
-    url=$(peco .url)
-  else
-    url=$(cat .url)
-  fi
-  print $url
+  local urls
+  urls=$(cat .url && echo $(get_remote_repo_url))
+  print $urls | fzf
 }
 
 function url() {
-  o $(get_project_url)
+  local selection
+  selection=$(get_project_url)
+  if [ -n "$selection" ]; then
+    print "Opening $selection..."
+    o $selection
+  fi
 }
 
 # change directory to git top level
