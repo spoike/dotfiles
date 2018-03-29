@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/seoul256.vim'
 Plug 'dracula/vim'
+Plug 'chriskempson/base16-vim'
 
 " General Purpose Utilities
 Plug 'tpope/vim-sensible'
@@ -372,5 +373,10 @@ nnoremap <C-W><C-F> <C-W>vgf
 "	let g:syntastic_javascript_standard_exec = 'semistandard'
 "	SyntasticCheck
 "endfunction
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set exrc
