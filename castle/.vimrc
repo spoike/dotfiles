@@ -129,7 +129,7 @@ set fillchars+=vert:│
 
 " Airline Config
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "dracula"
+let g:airline_theme = "base16"
 let &t_Co=256
 let g:airline#extensions#tabline#enabled = 0
 "let g:airline_section_b = '%{getcwd()}'
