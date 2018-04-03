@@ -143,3 +143,16 @@ else
   ok base16-shell
 fi
 
+# python3 apps/packages
+if [ -x "$(command -v pip3)" ]; then
+  packages=()
+  [ ! -x "$(command -v base16-shell-preview)" ] && packages+=(base16-shell-preview) || ok "base16-shell-preview"
+  if [ ! -s "$packages" ]; then
+    warn "Missing python apps/packages: ${packages}. Will now attempt to install with pip3."
+    pip3 install $packages
+  else
+    ok "python (pip3) packages"
+  fi
+else
+  warn "Python3 not installed yet..."
+fi
