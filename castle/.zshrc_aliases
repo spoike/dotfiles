@@ -298,3 +298,4 @@ alias get_external_ip="curl ipinfo.io"
 
 alias dark="base16_solarflare"
 alias light="base16_atelier-dune-light"
+alias colortest="~/.config/base16-shell/./colortest"
