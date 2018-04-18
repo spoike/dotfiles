@@ -18,6 +18,10 @@ download: ## Fetch the latest
 atom:    ## Install atom plugins
 	./scripts/atom/atom.sh
 
+.PHONY: link
+link:     ## Link the /castle
+	./bootstrap_castle.sh
+
 .PHONY: aws
 aws:     ## Install AWS specifics
 	./scripts/aws/aws.sh
