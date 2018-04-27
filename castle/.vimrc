@@ -379,4 +379,8 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
+" See https://andrew.stwrt.ca/posts/project-specific-vimrc/
+" Allow project specific vimrc
 set exrc
+" disable unsafe commands in project specific vimrc files
+set secure
