@@ -50,8 +50,8 @@ if v:version > 700
   let g:airline#extensions#gutentags#enabled = 1
 endif
 
-if has("gui_macvim")
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }    "only works on macvim
+if has("gui_macvim") || has('python') || has('python3')
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
 endif
 
 " Buffer Handling
