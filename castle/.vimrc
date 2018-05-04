@@ -43,8 +43,11 @@ Plug 'gioele/vim-autoswap'
 
 if v:version > 700
 	Plug 'yegappan/mru'
+  " Tags Handling
+  set tags=./tags;/,tags;/
 	Plug 'majutsushi/tagbar'
-	Plug 'ludovicchabant/vim-gutentags', { 'on': 'TagbarToggle' }
+  Plug 'ludovicchabant/vim-gutentags'
+  let g:airline#extensions#gutentags#enabled = 1
 endif
 
 if has("gui_macvim")
