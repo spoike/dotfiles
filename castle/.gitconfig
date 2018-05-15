@@ -33,7 +33,7 @@
 	r = remote -v			# show remotes (verbose)
 
 	# add
-	a = add
+  a = "!git ls-files -m -o --exclude-standard | fzf-tmux -d${FZF_TMUX_HEIGHT:-40%} --print0 -m | xargs -0 -t -o git add"
 	chunkyadd = add --patch
 
 	# log
