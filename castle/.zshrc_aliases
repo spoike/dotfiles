@@ -281,6 +281,12 @@ if command -v fzf &> /dev/null; then
       ctrl-x) git stash drop $reflog ;;
     esac
   }
+
+  # fjrnl - Search JRNL headlines
+  fjrnl() {
+    title=$(jrnl --short | fzf --tac --no-sort) &&
+    jrnl -on "$(echo $title | cut -c 1-16)" $1
+  }
 fi
 command -v ag >/dev/null 2>&1 && alias ff='ag'
 
