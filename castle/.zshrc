@@ -27,6 +27,9 @@ reload_cmpl(){unfunction $1 && autoload -U $1;}
 [ -e "${HOME}/.zshrc_extras" ] && source "${HOME}/.zshrc_extras"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ -x "$(command -v fzf)" ]]; then
+  [ -e ${HOME}/Projects/stuff/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh ] && source ${HOME}/Projects/stuff/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+fi
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1"  ] && [ -s $BASE16_SHELL/profile_helper.sh  ] && eval "$($BASE16_SHELL/profile_helper.sh)"

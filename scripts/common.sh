@@ -128,6 +128,13 @@ else
   ok "tmuxifier"
 fi
 
+if [[ ! -d $stuff/zsh-interactive-cd ]]; then
+  msg "Missing zsh-interactive-cd.plugin.zsh"
+  git clone https://github.com/changyuheng/zsh-interactive-cd.git $stuff/zsh-interactive-cd
+else
+  ok "zsh-interactive-cd.plugin.zsh"
+fi
+
 if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
   msg "Missing tmux plugin manager. Will attempt to clone..."
   mkdir -p $HOME/.tmux/plugins
