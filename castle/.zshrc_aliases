@@ -29,15 +29,15 @@ alias ne='npm-exec'
 
 # Quick Edit
 function edit_config() {
-	vim $(find -f ~/dotfiles/castle | peco)
+	$EDITOR $(find -f ~/dotfiles/castle | peco)
 }
 alias git_merge_conflicts='git diff --name-only | uniq'
 alias git_status_changes='git status -s | cut -d\  -f3'
 function git_latest_changes() {
 	git log --no-merges --name-status -${1:-10} . | grep ^[MAR][[:space:]] | cut -f2 | uniq
 }
-alias fix='vim $(git_merge_conflicts)' #fix (merge conflicts)
-alias changes='vim $(git_status_changes)' #git status edit
+alias fix='$EDITOR $(git_merge_conflicts)' #fix (merge conflicts)
+alias changes='$EDITOR $(git_status_changes)' #git status edit
 function latest() {
 	local interactive=""
 	while getopts ":i" opt; do
@@ -49,9 +49,9 @@ function latest() {
 	done
 	shift "$((OPTIND - 1))"
 	if [[ "$interactive" == "ON" ]]; then
-		vim $(git_latest_changes $* | peco)
+		$EDITOR $(git_latest_changes $* | peco)
 	else
-		vim $(git_latest_changes $*)
+		$EDITOR $(git_latest_changes $*)
 	fi
 }
 
@@ -185,7 +185,7 @@ function work_create() {
 		y|Y)
 			echo "alias dump='git fetch --all'" > $f
 			printf "Created file at $f\n"
-			vim $f
+			$EDITOR $f
 			return 0
 			;;
 		*)  # This is the default
@@ -212,7 +212,7 @@ if command -v fzf &> /dev/null; then
   export _Z_CMD='za'
 
 	# bind f to find a file to open
-	alias f='vim $(fzf)'
+	alias f='$EDITOR $(fzf)'
 
   # List all private SSH keys (that have a .pub associated) and let user select for ssh-add
   alias ssha='print -rl -- ~/.ssh/*.pub | sed -e "s/.pub$//" | fzf | xargs ssh-add'
