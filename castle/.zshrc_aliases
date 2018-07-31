@@ -214,6 +214,8 @@ if command -v fzf &> /dev/null; then
 	# bind f to find a file to open
 	alias f='$EDITOR $(fzf)'
 
+  alias flatest='$EDITOR $(git diff --name-only master | fzf)'
+
   # List all private SSH keys (that have a .pub associated) and let user select for ssh-add
   alias ssha='print -rl -- ~/.ssh/*.pub | sed -e "s/.pub$//" | fzf | xargs ssh-add'
 
