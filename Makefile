@@ -18,6 +18,10 @@ download: ## Fetch the latest
 atom:    ## Install atom plugins
 	./scripts/atom/atom.sh
 
+.PHONY: code
+code:    ## Install VS Code settings
+	./bootstrap_code.sh
+
 .PHONY: link
 link:     ## Link the /castle
 	./bootstrap_castle.sh

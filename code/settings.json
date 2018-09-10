@@ -1,0 +1,18 @@
+{
+    // Controls the font family.
+    "editor.fontFamily": "'FiraCode-Retina', 'FiraCode', Menlo, Monaco, 'Courier New', monospace",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "flow.runOnAllFiles": false,
+    "window.zoomLevel": -1,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "flow.enabled": true,
+    "flow.runOnEdit": true,
+    "flow.useNPMPackagedFlow": true,
+    "javascript.validate.enable": false,
+    "workbench.colorTheme": "Charcoal Oceanic Next",
+    "workbench.iconTheme": "vscode-icons"
+}

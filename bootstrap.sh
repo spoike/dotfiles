@@ -71,4 +71,11 @@ if [[ ! -z $promptall ]]; then
   then
     ./scripts/aws/aws.sh
   fi
+
+  read -q "REPLY?Install VsCode settings? [y/N] " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    ./bootstrap_code.sh
+  fi
 fi
