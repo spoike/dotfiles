@@ -138,6 +138,7 @@ function ow() {
 function get_remote_repo_url() {
   git remote -v | grep origin | cut -d$'\t' -f2 | cut -d' ' -f1 | \
     sed 's/git@/https:\/\//g' | sed -E 's/(https?:\/\/.*):/\1\//g' | \
+    sed 's/\.git//g' | \
     grep -Ev "^\s*$" | \
     sort | uniq
 }
@@ -149,6 +150,10 @@ function or() {
 
 function orp() {
   o ${$(get_remote_repo_url)[1]}/pulls
+}
+
+function orz() {
+  o ${$(get_remote_repo_url)[1]}/compare/$(git symbolic-ref --short -q HEAD)?expand=1
 }
 
 function get_project_url() {
