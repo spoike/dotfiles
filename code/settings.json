@@ -4,6 +4,7 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
+    "vim.sneak": true,
     "flow.runOnAllFiles": false,
     "window.zoomLevel": -1,
     "gitlens.advanced.messages": {
@@ -14,5 +15,7 @@
     "flow.useNPMPackagedFlow": true,
     "javascript.validate.enable": false,
     "workbench.colorTheme": "Charcoal Oceanic Next",
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.activityBar.visible": true,
+    "flow.useLSP": true
 }
