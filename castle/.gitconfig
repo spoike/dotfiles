@@ -27,7 +27,7 @@
 	recentbranch = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 	br-merged = branch --list '*/*' --no-color --merged master
 	br-merged-clean = "!git br-merged | while read branch; do git branch -v -D $branch ; done"
-  brd = "!git branch --sort=-committerdate --no-color --format=\"%(refname:short)\" | fzf -m | xargs git branch -d"
+  brd = "!git branch --sort=-committerdate --no-color --format=\"%(refname:short)\" | fzf -m | xargs git branch -D"
 
 	# remote stuff
 	fu = fetch upstream
