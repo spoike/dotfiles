@@ -86,3 +86,9 @@ tags
 # .url file - open project url
 .url
 
+# notes for me
+*.notes.todo
+*.notes.txt
+*.notes.md
+*.notes
+
