@@ -17,7 +17,7 @@
 
 	# checkout
 	co = checkout
-  coo = "!git branch --sort=-committerdate --no-color | cut -c3- | fzf | xargs git checkout"
+  coo = "!git branch --sort=-committerdate --no-color --format=\"%(refname:short)\" | fzf | xargs git checkout"
     # list branches ordered with latest changed, select with fzf, and checkout
 	cm = checkout master
 	nb = checkout -b		# create and switch to new branch
