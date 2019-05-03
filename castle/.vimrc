@@ -50,8 +50,12 @@ if v:version > 700
   let g:airline#extensions#gutentags#enabled = 1
 endif
 
-if has("gui_macvim") || has('python') || has('python3')
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
+" Autocompleter
+"if has("gui_macvim") || has('python') || has('python3')
+"	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
+"endif
+if has('python3')
+  Plug 'maralla/completor.vim'
 endif
 
 " Buffer Handling
@@ -370,3 +374,16 @@ endif
 set exrc
 " disable unsafe commands in project specific vimrc files
 set secure
+
+" See https://vi.stackexchange.com/questions/2232/how-can-i-use-vim-as-a-hex-editor
+" edit binary files
+augroup Binary
+  au!
+  au BufReadPre  *.bin let &bin=1
+  au BufReadPost *.bin if &bin | %!xxd
+  au BufReadPost *.bin set ft=xxd | endif
+  au BufWritePre *.bin if &bin | %!xxd -r
+  au BufWritePre *.bin endif
+  au BufWritePost *.bin if &bin | %!xxd
+  au BufWritePost *.bin set nomod | endif
+augroup END
