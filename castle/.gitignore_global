@@ -92,3 +92,5 @@ tags
 *.notes.md
 *.notes
 
+# vscode
+/.vscode/
