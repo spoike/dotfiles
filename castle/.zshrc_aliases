@@ -33,27 +33,10 @@ function edit_config() {
 }
 alias git_merge_conflicts='git diff --name-only | uniq'
 alias git_status_changes='git status -s | cut -d\  -f3'
-function git_latest_changes() {
-	git log --no-merges --name-status -${1:-10} . | grep ^[MAR][[:space:]] | cut -f2 | uniq
-}
-alias fix='$EDITOR $(git_merge_conflicts)' #fix (merge conflicts)
-alias changes='$EDITOR $(git_status_changes)' #git status edit
-function latest() {
-	local interactive=""
-	while getopts ":i" opt; do
-		case "$opt" in
-			i)
-				interactive="ON"
-				;;
-		esac
-	done
-	shift "$((OPTIND - 1))"
-	if [[ "$interactive" == "ON" ]]; then
-		$EDITOR $(git_latest_changes $* | peco)
-	else
-		$EDITOR $(git_latest_changes $*)
-	fi
-}
+alias git_latest_changes=' git whatchanged --name-only --pretty="" origin..HEAD | sort | uniq'
+alias fix='git_merge_conflicts | fzf -m | xargs -o $EDITOR' #fix (merge conflicts)
+alias changes='git_status_changes | fzf -m | xargs -o $EDITOR' #git status edit
+alias latest='git_latest_changes | fzf -m | xargs -o $EDITOR'
 
 # Docker
 alias dicker='docker'
@@ -294,6 +277,8 @@ if command -v fzf &> /dev/null; then
     title=$(jrnl --short | fzf --tac --no-sort) &&
     jrnl -on "$(echo $title | cut -c 1-16)" $1
   }
+
+  alias coo="git reflog | egrep -io \"moving from ([^[:space:]]+)\" | awk '{ print \$3 }' | awk ' !x[\$0]++' | egrep -v '^[a-f0-9]{40}$' | head -n5 | tac | fzf | xargs git checkout"
 fi
 command -v ag >/dev/null 2>&1 && alias ff='ag'
 
