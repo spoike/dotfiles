@@ -336,9 +336,12 @@ function up {
 	fi
 }
 
+alias where_am_i="curl https://freegeoip.app/json/ | jq '\"\\(.city) \\(.region_name) \\(.country_name)\"'"
+
 function weather {
   curl wttr.in/${1:-kävlinge}
 }
+alias weather_here="weather $(where_am_i)"
 
 alias get_external_ip="curl ipinfo.io"
 
