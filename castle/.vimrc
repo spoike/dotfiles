@@ -50,13 +50,7 @@ if v:version > 700
   let g:airline#extensions#gutentags#enabled = 1
 endif
 
-" Autocompleter
-"if has("gui_macvim") || has('python') || has('python3')
-"	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
-"endif
-if has('python3')
-  Plug 'maralla/completor.vim'
-endif
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 
 " Buffer Handling
 Plug 'moll/vim-bbye'
