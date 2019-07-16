@@ -335,4 +335,4 @@ alias light="base16_atelier-dune-light"
 alias colortest="~/.config/base16-shell/./colortest"
 
 alias find_node_modules="find . -name 'node_modules' -type d -prune"
-alias clear_node_modules="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' +"
+alias nuke_node_modules="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' +"
