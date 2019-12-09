@@ -1,9 +1,8 @@
 # ZSH Environment Configuration
 
-# NVM with completion
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
-#export PATH="$PATH:$NVM_DIR/v0.10.26/bin"
-#source "$NVM_DIR/v0.10.26/lib/node_modules/npm/lib/utils/completion.sh"
+# nvm
+export NVM_DIR="/Users/spoike/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # This loads NVM
 
 # rvm
 if [[ -d "$HOME/.rvm" ]]; then
