@@ -1,13 +1,14 @@
 # ZSH Environment Configuration
 
 # nvm
-export NVM_DIR="/Users/spoike/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # This loads NVM
 
 # rvm
-if [[ -d "$HOME/.rvm" ]]; then
-  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-  source $HOME/.rvm/scripts/rvm
+export RVM_DIR="$HOME/.rvm"
+if [[ -s "$RVM_DIR/scripts/rvm" ]]; then
+  source $RVM_DIR/scripts/rvm
+  export PATH="$PATH:$RVM_DIR/bin" # Add RVM to PATH for scripting
 fi
 
 # stuff
