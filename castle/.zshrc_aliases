@@ -295,7 +295,7 @@ function src() {
 # Update Stuff
 if [[ $platform == 'Linux' ]]; then
 elif [[ $platform == 'Darwin' ]]; then
-	alias update_brew='brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor'
+	alias update_brew='brew -v update; brew upgrade; brew doctor'
 	alias brewu='update_brew'
 	alias cask='brew cask'
 	alias note='open -a Notes'
