@@ -1,6 +1,6 @@
 mafredri/zsh-async
-zsh-users/zsh-completions
-sdurrheimer/docker-compose-zsh-completion
-yonchu/grunt-zsh-completion
-zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions kind:defer
+#sdurrheimer/docker-compose-zsh-completion
+#yonchu/grunt-zsh-completion
+zsh-users/zsh-history-substring-search kind:defer
 zsh-users/zsh-syntax-highlighting
