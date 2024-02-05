@@ -1,4 +1,6 @@
+#!/bin/zsh
 #
+# .zprofile - ZSH file loaded on login
 # Executes commands at login pre-zshrc.
 #
 
@@ -10,9 +12,9 @@ fi
 
 # Editors
 
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='less'
+export EDITOR='${EDITOR:-vim}'
+export VISUAL='${VISUAL:-vim}'
+export PAGER='${PAGER:-less}'
 
 # vim using macvim
 mvim --version > /dev/null 2>&1

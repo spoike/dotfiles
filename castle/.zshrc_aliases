@@ -6,6 +6,9 @@ platform=`uname` # for selecting aliases for a specific platform
 alias c='clear'
 alias q='quit'
 
+# Git
+alias g='git'
+
 # NodeJS
 alias nu='nvm use'
 alias nnn='. ~/bin/use-pkg-node-version.sh'
